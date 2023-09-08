@@ -12,8 +12,8 @@ public class PedidoLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		Coleta c1 = new Coleta();
-		System.out.println("Inclusão realiza com sucesso!");
+		Coleta coleta = new Coleta();
+		System.out.println("Solicitação de coleta realizada com sucesso: " + coleta);
 	}
 
 }

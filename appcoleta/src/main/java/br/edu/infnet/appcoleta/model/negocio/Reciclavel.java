@@ -1,15 +1,16 @@
 package br.edu.infnet.appcoleta.model.negocio;
 
-public class Oleo extends Residuo{
-	public enum OleoTipo{
-		Cozinha, Automotivo, Termico, Hidraulico, Outro;
+public class Reciclavel extends Residuo{
+	
+	public enum ReciclavelTipo{
+		Papel, Metal, Plastico, Vidro, Madeira, 
 	}
 	
 	private float peso;
 	private boolean isLimpo;
-	private OleoTipo tipo;
+	private ReciclavelTipo tipo;
 	
-	public Oleo() {
+	public Reciclavel() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -29,13 +30,12 @@ public class Oleo extends Residuo{
 		this.isLimpo = isLimpo;
 	}
 
-	public OleoTipo getTipo() {
+	public ReciclavelTipo getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(OleoTipo tipo) {
+	public void setTipo(ReciclavelTipo tipo) {
 		this.tipo = tipo;
 	}
-	
 	
 }

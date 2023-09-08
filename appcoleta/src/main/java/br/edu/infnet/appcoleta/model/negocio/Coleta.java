@@ -13,5 +13,10 @@ public class Coleta {
 		pendente = true;
 	}
 	
+	@Override
+	public String toString() {
+		return descricao + ";" + data + ";" + pendente;
+		
+	}
 	
 }
