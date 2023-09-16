@@ -4,10 +4,12 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
 import br.edu.infnet.appcoleta.model.negocio.Oleo;
 import br.edu.infnet.appcoleta.model.negocio.Oleo.OleoTipo;
 
-@Order(4)
+
+@Order(1)
 @Component
 public class OleoLoader implements ApplicationRunner {
 	

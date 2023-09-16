@@ -4,10 +4,11 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
 import br.edu.infnet.appcoleta.model.negocio.Reciclavel;
 import br.edu.infnet.appcoleta.model.negocio.Reciclavel.ReciclavelTipo;
 
-@Order(3)
+@Order(2)
 @Component
 public class ReciclavelLoader implements ApplicationRunner {
 	

@@ -10,9 +10,6 @@
 	rel="stylesheet">
 </head>
 <body>
-	<p><b>Aluno:</b> Patrick Neri de Oliveira</p>
-	<p><b>Professor:</b> Elberth Moraes</p>
-	
 	<div class="container mt-3">
 		<h2>Classes de Domínio (Negócio)</h2>
 		<h3>Coleta</h3>
@@ -43,7 +40,7 @@
 			</tbody>
 		</table>
 	</div>
-	
+	<hr>
 	<div class="container mt-3">
 		<h3>Solicitante</h3>
 		<table class="table table-striped">
@@ -73,8 +70,8 @@
 			</tbody>
 		</table>
 	</div>
-	
-		<div class="container mt-3">
+	<hr>
+	<div class="container mt-3">
 		<h3>Residuo</h3>
 		<h4>Classe Abstrata</h4>
 		<table class="table table-striped">
@@ -104,7 +101,15 @@
 			</tbody>
 		</table>
 	</div>
-	
-	
+	<hr>
+	<div class="text-center">
+		<h6>
+			<b>Aluno:</b> Patrick Neri de Oliveira
+		</h6>
+		<h6>
+			<b>Professor:</b> Elberth Moraes
+		</h6>
+	</div>
+
 </body>
 </html>

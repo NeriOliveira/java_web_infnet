@@ -34,4 +34,9 @@ public class Solicitante {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("Nome: %s; CPF: %s; E-mail: %s", getNome(), getCpf(), getEmail());
+	}
 }
