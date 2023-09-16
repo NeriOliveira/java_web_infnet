@@ -29,11 +29,21 @@ public class MapLoader implements ApplicationRunner {
 		
 		mapa.put("111", "maria");
 		mapa.put("123", "jose");
+		mapa.put("234", "otavio");
+		
+		for(String v: mapa.values()) {
+			System.out.println("value for_each: " + v);
+		}
 		
 		System.out.println("keyset: " + mapa.keySet());
 		System.out.println("values: " + mapa.values());
 		System.out.println("get: " + mapa.get("111"));
-
+		System.out.println("get: " + mapa.get("546"));
+		System.out.println("get: " + mapa.get("234"));
+		System.out.println("get: " + mapa.get("123"));
+		
+		mapa.remove("234");
+		System.out.println("get (removido): " + mapa.get("234"));
 		
 	}
 
