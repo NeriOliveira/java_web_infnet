@@ -20,18 +20,20 @@ public class MapLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		Solicitante s1 = new Solicitante("Maria", "123.000.000-00", "maria@al.infnet.edu.br");
-		Solicitante s2 = new Solicitante("Jose", "321.000.000-00", "jose@al.infnet.edu.br");
+		Solicitante s1 = new Solicitante("Maria", "111", "maria@al.infnet.edu.br");
+		Solicitante s2 = new Solicitante("Jose", "123", "jose@al.infnet.edu.br");
+		Solicitante s3 = new Solicitante("Otavio", "234", "otavio@al.infnet.edu.br");
+
 
 		List<Solicitante> lista = new ArrayList<Solicitante>();
 		
-		Map<String, String> mapa = new HashMap<String, String>();
+		Map<String, Solicitante> mapa = new HashMap<String, Solicitante>();
 		
-		mapa.put("111", "maria");
-		mapa.put("123", "jose");
-		mapa.put("234", "otavio");
+		mapa.put("111", s1);
+		mapa.put("123", s2);
+		mapa.put("234", s3);
 		
-		for(String v: mapa.values()) {
+		for(Solicitante v: mapa.values()) {
 			System.out.println("value for_each: " + v);
 		}
 		
