@@ -2,6 +2,8 @@ package br.edu.infnet.appcoleta;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -19,13 +21,40 @@ public class EntulhoLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		FileReader file = new FileReader("bebida.txt");
+		Map<Integer, Entulho> mapaEntulho = new HashMap<Integer, Entulho>();
+		
+		FileReader file = new FileReader("entulho.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		
-		System.out.println(leitura.readLine());
+		String linha = leitura.readLine();
+		String[] campos = null;
 		
-//		Entulho entulho = new Entulho("Demolição de Parede", 22, "Residencial Pereira", 30, true, EntulhoClasse.A);
-//		System.out.println("[Entulho] Solicitação de coleta realizada com sucesso: " + entulho);
+		while(linha != null) {
+			campos = linha.split(";");
+			
+			Entulho entulho = new Entulho(
+						campos[0],
+						Integer.valueOf(campos[1]), 
+						campos[2], 
+						Float.valueOf(campos[3]), 
+						Boolean.valueOf(campos[4]), 
+						Entulho.valueOf(campos[5])
+					);
+			mapaEntulho.put(entulho.getCodigo(), entulho);
+			
+			linha = leitura.readLine();
+		}
+		
+//		for(Integer k : mapaEntulho.keySet()) {
+//			System.out.println("chave: " + k);
+//			System.out.println("[Entulho] Solicitação de coleta realizada com sucesso: " + mapaEntulho.get(k));
+//		}
+		
+		for(Entulho entulho : mapaEntulho.values()) {
+			System.out.println("[Entulho] Solicitação de coleta realizada com sucesso: " + entulho);
+		}
+		
+		leitura.close();
 		
 	}
 

@@ -54,5 +54,27 @@ public class Entulho extends Residuo{
 		return String.format("Classe: %s; Volume: %.2f m³; Está em uma obra? %s", getClasse(), getVolume(), isObra());
 	}
 	
-
+	
+    public static EntulhoClasse valueOf(String s) {
+    	EntulhoClasse classe = null;
+    	switch (s) {
+        case "A":  
+        	classe = EntulhoClasse.A;
+            break;
+        case "B":
+        	classe = EntulhoClasse.B;
+            break;
+        case "C":  
+        	classe = EntulhoClasse.C;
+            break;
+        case "D":  
+        	classe = EntulhoClasse.D;
+        	break;
+        default: 
+            System.out.println("Classe inválida.");
+            break;
+    	}
+        return classe;
+    }
+	
 }
