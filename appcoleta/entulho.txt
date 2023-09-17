@@ -1,0 +1,4 @@
+Demolição de Parede;e1;Residencial Pereira;30;true;EntulhoClasse.A
+Demolição de Piso;e2;Residencial Pereira;15;true;EntulhoClasse.C
+Demolição de Hospital;e3;Construtora Felizes;120;true;EntulhoClasse.D
+Demolição de Parede;e4;Praia Shopping;10;false;EntulhoClasse.B
