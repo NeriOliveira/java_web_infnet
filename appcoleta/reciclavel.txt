@@ -1,0 +1,4 @@
+Garrafas de Vidro;21;Algumas possuem adesivo da marca;35.43;true;Vidro
+Garrafas de Plástico;22;Algumas possuem adesivo da marca;15.10;true;Plastico
+Latas de Tinta;23;null;87.88;false;Metal
+Jornais Antigos;24;Estão empoeirados;48.70;false;Papel

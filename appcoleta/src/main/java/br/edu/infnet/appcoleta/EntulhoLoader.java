@@ -45,13 +45,8 @@ public class EntulhoLoader implements ApplicationRunner {
 			linha = leitura.readLine();
 		}
 		
-//		for(Integer k : mapaEntulho.keySet()) {
-//			System.out.println("chave: " + k);
-//			System.out.println("[Entulho] Solicitação de coleta realizada com sucesso: " + mapaEntulho.get(k));
-//		}
-		
 		for(Entulho entulho : mapaEntulho.values()) {
-			System.out.println("[Entulho] Solicitação de coleta realizada com sucesso: " + entulho);
+			System.out.println("[Entulho " + entulho.getCodigo() + "] Solicitação de coleta realizada com sucesso: " + entulho);
 		}
 		
 		leitura.close();

@@ -47,4 +47,28 @@ public class Reciclavel extends Residuo{
 		return String.format("Tipo: %s; Peso: %.2f kg; Está limpo? %s", getTipo(), getPeso(), isLimpo());
 	}
 	
+	public static ReciclavelTipo valueOf(String s) {
+		ReciclavelTipo tipo = null;
+    	switch (s) {
+        case "Madeira":  
+        	tipo = ReciclavelTipo.Madeira;
+            break;
+        case "Metal":
+        	tipo = ReciclavelTipo.Metal;
+            break;
+        case "Papel":  
+        	tipo = ReciclavelTipo.Papel;
+            break;
+        case "Plastico":  
+        	tipo = ReciclavelTipo.Plastico;
+        	break;
+        case "Vidro":  
+        	tipo = ReciclavelTipo.Vidro;
+        	break;
+        default: 
+            System.out.println("Tipo inválido. Digite o tipo sem acento e com a primeira letra maiúscula.");
+            break;
+    	}
+        return tipo;
+    }
 }

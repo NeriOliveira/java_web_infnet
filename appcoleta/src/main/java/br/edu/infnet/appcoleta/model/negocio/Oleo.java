@@ -46,4 +46,29 @@ public class Oleo extends Residuo{
 		return String.format("Tipo: %s; Volume: %.2f litro(s); Está limpo? %s", getTipo(), getVolume(), isLimpo());
 	}
 	
+    public static OleoTipo valueOf(String s) {
+    	OleoTipo tipo = null;
+    	switch (s) {
+        case "Automotivo":  
+        	tipo = OleoTipo.Automotivo;
+            break;
+        case "Cozinha":
+        	tipo = OleoTipo.Cozinha;
+            break;
+        case "Hidraulico":  
+        	tipo = OleoTipo.Hidraulico;
+            break;
+        case "Outro":  
+        	tipo = OleoTipo.Outro;
+        	break;
+        case "Termico":  
+        	tipo = OleoTipo.Termico;
+        	break;
+        default: 
+            System.out.println("Tipo inválido. Digite o tipo sem acento e com a primeira letra maiúscula.");
+            break;
+    	}
+        return tipo;
+    }
+	
 }
