@@ -73,7 +73,7 @@
 	<hr>
 	<div class="container mt-3">
 		<h3>Residuo</h3>
-		<h4>Classe Abstrata</h4>
+		<h6>(Classe Abstrata)</h6>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -97,6 +97,102 @@
 					<td>email</td>
 					<td>String</td>
 					<td>E-mail do usuário responsável pela solicitação de coleta</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<hr>
+	<div class="container mt-3">
+		<h3>Oleo</h3>
+		<h6>(Extends Residuo)</h6>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Campo</th>
+					<th>Tipo</th>
+					<th>Observação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>volume</td>
+					<td>float</td>
+					<td>Volume medido em litros do resíduo que o Solicitante
+						deseja que seja coletado para destinação.</td>
+				</tr>
+				<tr>
+					<td>isLimpo</td>
+					<td>boolean</td>
+					<td>O resíduo está limpo?</td>
+				</tr>
+				<tr>
+					<td>tipo</td>
+					<td>OleoTipo (ENUM)</td>
+					<td>Cozinha, Automotivo, Termico, Hidraulico ou Outro.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<hr>
+	<div class="container mt-3">
+		<h3>Reciclavel</h3>
+		<h6>(Extends Residuo)</h6>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Campo</th>
+					<th>Tipo</th>
+					<th>Observação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>peso</td>
+					<td>float</td>
+					<td>Peso medido em quilograma (kg) do resíduo que o
+						Solicitante deseja que seja coletado para destinação.</td>
+				</tr>
+				<tr>
+					<td>isLimpo</td>
+					<td>boolean</td>
+					<td>O resíduo está limpo?</td>
+				</tr>
+				<tr>
+					<td>tipo</td>
+					<td>ReciclavelTipo (ENUM)</td>
+					<td>Papel, Metal, Plastico, Vidro ou Madeira.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<hr>
+	<div class="container mt-3">
+		<h3>Entulho</h3>
+		<h6>(Extends Residuo)</h6>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Campo</th>
+					<th>Tipo</th>
+					<th>Observação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>volume</td>
+					<td>float</td>
+					<td>Volume medido em metro cúbico (m³) do resíduo que o
+						Solicitante deseja que seja coletado para destinação.</td>
+				</tr>
+				<tr>
+					<td>isObra</td>
+					<td>boolean</td>
+					<td>O resíduo está em uma obra?</td>
+				</tr>
+				<tr>
+					<td>tipo</td>
+					<td>EntulhoClasse (ENUM)</td>
+					<td>Classes A, B C ou D com base na Resolução CONAMA 307/2002.</td>
 				</tr>
 			</tbody>
 		</table>

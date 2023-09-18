@@ -3,7 +3,7 @@ package br.edu.infnet.appcoleta.model.negocio;
 public class Reciclavel extends Residuo{
 
 	public enum ReciclavelTipo{
-		Papel, Metal, Plastico, Vidro, Madeira, 
+		Papel, Metal, Plastico, Vidro, Madeira;
 	}
 	
 	private float peso;

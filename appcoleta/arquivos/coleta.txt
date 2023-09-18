@@ -1,0 +1,9 @@
+C;Coleta nas obras do Eng.Patrick;Patrick;40;patrick.noliveira@al.infnet.edu.br
+E;Demolição de Piso;32;Residencial Pereira;15.50;true;C
+E;Demolição de Hospital;33;Construtora Felizes;120;true;D
+O;Óleo de Caminhão;11;null;70;false;Automotivo
+O;Óleo de Carro;13;null;21;false;Automotivo
+R;Latas de Tinta;23;null;87.88;false;Metal
+C;Coleta no Restaurante da Dona Maria;Maria;41;maria@al.infnet.edu.br
+O;Óleo de Cozinha;12;Fritura de batatas;15.25;true;Cozinha
+R;Garrafas de Plástico;22;Algumas possuem adesivo da marca;15.10;true;Plastico

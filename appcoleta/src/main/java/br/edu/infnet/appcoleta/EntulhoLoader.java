@@ -23,7 +23,7 @@ public class EntulhoLoader implements ApplicationRunner {
 		
 		Map<Integer, Entulho> mapaEntulho = new HashMap<Integer, Entulho>();
 		
-		FileReader file = new FileReader("entulho.txt");
+		FileReader file = new FileReader("arquivos/entulho.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		
 		String linha = leitura.readLine();
