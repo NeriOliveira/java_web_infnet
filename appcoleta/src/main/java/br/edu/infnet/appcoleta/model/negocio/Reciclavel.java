@@ -10,6 +10,9 @@ public class Reciclavel extends Residuo{
 	private boolean isLimpo;
 	private ReciclavelTipo tipo;
 	
+	public Reciclavel() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Reciclavel(String nome, int codigo, String observacao, float peso, boolean isLimpo, ReciclavelTipo tipo) {
 		super(nome, codigo, observacao);

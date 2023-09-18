@@ -6,6 +6,10 @@ public abstract class Residuo {
 	private int codigo;
 	private String observacao;
 	
+	public Residuo() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Residuo(String nome, /*float valor,*/ int codigo, String observacao) {
 		setNome(nome);
 //		setValor(valor);

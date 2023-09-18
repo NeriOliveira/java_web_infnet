@@ -10,6 +10,10 @@ public class Oleo extends Residuo{
 	private boolean isLimpo;
 	private OleoTipo tipo;
 	
+	public Oleo() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Oleo(String nome, int codigo, String observacao, float volume, boolean isLimpo, OleoTipo tipo) {
 		super(nome, codigo, observacao);
 		setVolume(volume);

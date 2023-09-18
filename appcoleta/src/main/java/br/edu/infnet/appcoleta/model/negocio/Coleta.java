@@ -11,6 +11,10 @@ public class Coleta {
 	private Solicitante solicitante;
 	private List<Residuo> residuos;
 	
+	public Coleta() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Coleta(Solicitante solicitante, List<Residuo> residuos) {
 		
 		descricao = "Pedido Inicial";

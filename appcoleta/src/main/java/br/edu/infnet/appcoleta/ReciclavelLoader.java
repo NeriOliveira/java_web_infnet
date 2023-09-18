@@ -21,7 +21,7 @@ public class ReciclavelLoader implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		
 		Map<Integer, Reciclavel> mapaReciclavel = new HashMap<Integer, Reciclavel>();
-		FileReader file = new FileReader("reciclavel.txt");
+		FileReader file = new FileReader("arquivos/reciclavel.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		String linha = leitura.readLine();
 		String[] campos = null;

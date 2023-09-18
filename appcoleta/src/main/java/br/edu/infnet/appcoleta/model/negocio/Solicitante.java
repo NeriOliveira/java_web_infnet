@@ -5,6 +5,10 @@ public class Solicitante {
     private String cpf;
     private String email;
 
+    public Solicitante() {
+		// TODO Auto-generated constructor stub
+	}    
+    
     public Solicitante(String nome, String cpf, String email) {
         this.setNome(nome);
         this.setCpf(cpf);

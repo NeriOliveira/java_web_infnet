@@ -24,7 +24,7 @@ public class OleoLoader implements ApplicationRunner {
 		
 		Map<Integer, Oleo> mapaOleo = new HashMap<Integer, Oleo>();
 		
-		FileReader file = new FileReader("oleo.txt");
+		FileReader file = new FileReader("arquivos/oleo.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		
 		String linha = leitura.readLine();

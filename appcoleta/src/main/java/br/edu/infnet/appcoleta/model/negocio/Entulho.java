@@ -17,6 +17,9 @@ public class Entulho extends Residuo{
 	private boolean isObra;
 	private EntulhoClasse classe;
 	
+	public Entulho() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Entulho(String nome, int codigo, String observacao, float volume, boolean isObra, EntulhoClasse classe) {
 		super(nome, codigo, observacao);
