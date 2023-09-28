@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,8 @@
 	rel="stylesheet">
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	
 	<div class="container mt-3">
 		<h2>Classes de Domínio (Negócio)</h2>
 		<h3>Coleta</h3>

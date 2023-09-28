@@ -2,6 +2,7 @@ package br.edu.infnet.appcoleta_jdk11;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,10 +17,16 @@ import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
 @Component
 public class SolicitanteLoader implements ApplicationRunner {
 	
+	private Map<String, Solicitante> mapaSolicitante;
+	
+	public Collection<Solicitante> obterLista(){
+		return mapaSolicitante.values();
+	}
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		Map<String, Solicitante> mapaSolicitante = new HashMap<String, Solicitante>();
+		mapaSolicitante = new HashMap<String, Solicitante>();
 		FileReader file = new FileReader("arquivos/solicitante.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		String linha = leitura.readLine();
@@ -45,7 +52,6 @@ public class SolicitanteLoader implements ApplicationRunner {
 		}
 		
 		leitura.close();
-					
 	}
 
 }

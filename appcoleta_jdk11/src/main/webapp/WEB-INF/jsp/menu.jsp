@@ -17,6 +17,7 @@
 				<li class="nav-item"><a class="nav-link" href="#">Reciclaveis</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Entulho</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Coleta</a></li>
+				<li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a></li>
 
 			</ul>
 		</div>
