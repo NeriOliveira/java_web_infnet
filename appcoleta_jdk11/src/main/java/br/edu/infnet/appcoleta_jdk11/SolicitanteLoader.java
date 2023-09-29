@@ -6,27 +6,25 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appcoleta_jdk11.controller.SolicitanteController;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
 
 @Order(4)
 @Component
 public class SolicitanteLoader implements ApplicationRunner {
 	
-	private Map<String, Solicitante> mapaSolicitante;
-	
-	public Collection<Solicitante> obterLista(){
-		return mapaSolicitante.values();
-	}
+	@Autowired
+	private SolicitanteController solicitanteController;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		mapaSolicitante = new HashMap<String, Solicitante>();
 		FileReader file = new FileReader("arquivos/solicitante.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		String linha = leitura.readLine();
@@ -41,15 +39,11 @@ public class SolicitanteLoader implements ApplicationRunner {
 					campos[2]
 					);
 			
-			mapaSolicitante.put(solicitante.getCpf(), solicitante);
+			solicitanteController.incluir(solicitante);
 			
 			linha = leitura.readLine();	
 		
 			}
-		
-		for(Solicitante solicitante : mapaSolicitante.values()) {
-			System.out.println("[Solicitante " + solicitante.getCpf() + "] Solicitação de coleta realizada com sucesso: " + solicitante);
-		}
 		
 		leitura.close();
 	}
