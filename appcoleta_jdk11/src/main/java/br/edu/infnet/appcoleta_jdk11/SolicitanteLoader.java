@@ -2,9 +2,6 @@ package br.edu.infnet.appcoleta_jdk11;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -12,15 +9,15 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appcoleta_jdk11.controller.SolicitanteController;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
+import br.edu.infnet.appcoleta_jdk11.model.service.SolicitanteService;
 
 @Order(4)
 @Component
 public class SolicitanteLoader implements ApplicationRunner {
 	
 	@Autowired
-	private SolicitanteController solicitanteController;
+	private SolicitanteService solicitanteService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -39,7 +36,7 @@ public class SolicitanteLoader implements ApplicationRunner {
 					campos[2]
 					);
 			
-			solicitanteController.incluir(solicitante);
+			solicitanteService.incluir(solicitante);
 			
 			linha = leitura.readLine();	
 		

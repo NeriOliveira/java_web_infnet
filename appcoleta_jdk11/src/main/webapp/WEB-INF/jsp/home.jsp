@@ -6,19 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>APP Coleta Seletiva</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-</head>
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
-
-	<div class="container-fluid mt-3">
+	<div class="container mt-3">
 		<h3>App Coleta Seletiva</h3>
 		<p>Aplicação de agendamento para realização de coleta seletiva. Ajude o meio ambiente.</p>
-	</div>
-
-	<div class="container mt-3"></div>
+		<c:import url="/WEB-INF/jsp/carousel.jsp"/>
 	<hr>
 	<div class="text-center">
 		<h6>
@@ -28,6 +21,6 @@
 			<b>Professor:</b> Elberth Moraes
 		</h6>
 	</div>
-
+	</div>
 </body>
 </html>

@@ -10,24 +10,30 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container mt-3">
-		<h2>Listagem de usuários:</h2>
+	<h2>Listagem de Óleos:</h2>
+	<h3>Resíduos Cadastrados</h3>
 		<table class="table table-striped">
-		<h3>Usuário</h3>
 			<thead>
 				<tr>
 					<th>Nome</th>
-					<th>CPF</th>
-					<th>Senha</th>
+					<th>Código</th>
+					<th>Observação</th>
+					<th>Volume (l)</th>
+					<th>Está limpo?</th>
+					<th>Tipo</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="u" items="${listaUsuario}">
+				<c:forEach var="o" items="${listaOleo}">
 					<tr>
-						<td>${u.nome}</td>
-						<td>${u.email}</td>
-						<td type="password">${u.senha}</td>
-						<td><a href="/usuario/${u.email}/excluir">excluir</a></td>
+						<td>${o.nome}</td>
+						<td>${o.codigo}</td>
+						<td>${o.observacao}</td>
+						<td>${o.volume}</td>
+						<td>${o.limpo}</td>
+						<td>${o.tipo}</td>
+						<td><a href="/oleo/${o.codigo}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

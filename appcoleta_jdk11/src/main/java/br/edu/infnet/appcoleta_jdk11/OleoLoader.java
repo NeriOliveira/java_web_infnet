@@ -2,14 +2,14 @@ package br.edu.infnet.appcoleta_jdk11;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appcoleta_jdk11.controller.OleoController;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 
 
@@ -17,10 +17,11 @@ import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 @Component
 public class OleoLoader implements ApplicationRunner {
 	
+	@Autowired
+	private OleoController oleoController;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		
-		Map<Integer, Oleo> mapaOleo = new HashMap<Integer, Oleo>();
 		
 		FileReader file = new FileReader("arquivos/oleo.txt");
 		BufferedReader leitura = new BufferedReader(file);
@@ -40,13 +41,9 @@ public class OleoLoader implements ApplicationRunner {
 					Oleo.valueOf(campos[5])
 				);
 			
-			mapaOleo.put(oleo.getCodigo(), oleo);
+			oleoController.incluir(oleo);
 			
 			linha = leitura.readLine();
-		}
-		
-		for(Oleo oleo : mapaOleo.values()) {
-			System.out.println("[Óleo " + oleo.getCodigo() + "] Solicitação de coleta realizada com sucesso: " + oleo);
 		}
 		
 		leitura.close();

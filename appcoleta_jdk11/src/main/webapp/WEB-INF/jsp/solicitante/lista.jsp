@@ -6,17 +6,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>APP Coleta Seletiva</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+
 </head>
 <body>
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
-
-	<div class="container-fluid mt-3">
-		<h2>Listagem de solicitantes:</h2>
-
-		<h4>Coleta</h4>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+	<div class="container mt-3">
+	<h2>Listagem de solicitantes:</h2>
+	<button type="button" class="btn btn-success"
+		href="/solicitante/cadastro">Incluir Novo</button>
+		<h3>Coleta</h3>
 		<table class="table table-striped">
 			<thead>
 				<tr>
