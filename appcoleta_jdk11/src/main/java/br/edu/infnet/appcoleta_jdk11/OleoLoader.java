@@ -9,8 +9,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appcoleta_jdk11.controller.OleoController;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
+import br.edu.infnet.appcoleta_jdk11.model.service.OleoService;
 
 
 @Order(1)
@@ -18,7 +18,7 @@ import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 public class OleoLoader implements ApplicationRunner {
 	
 	@Autowired
-	private OleoController oleoController;
+	private OleoService oleoService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -41,7 +41,7 @@ public class OleoLoader implements ApplicationRunner {
 					Oleo.valueOf(campos[5])
 				);
 			
-			oleoController.incluir(oleo);
+			oleoService.incluir(oleo);
 			
 			linha = leitura.readLine();
 		}

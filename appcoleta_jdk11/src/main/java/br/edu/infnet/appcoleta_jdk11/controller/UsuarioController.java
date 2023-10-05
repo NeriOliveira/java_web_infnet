@@ -7,15 +7,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 import br.edu.infnet.appcoleta_jdk11.model.service.UsuarioService;
 
 @SessionAttributes("user")
+
+
 @Controller
 public class UsuarioController {
 	
+	public Usuario userSession;
+	
+	public Usuario getUserSession() {
+		return userSession;
+	}
+
 	@Autowired
 	private UsuarioService usuarioService;
 	
@@ -37,6 +46,10 @@ public class UsuarioController {
 		
 		usuarioService.incluir(usuario);
 		
+		if(userSession != null) {
+			return "redirect:/usuario/lista";
+		}
+		
 		return "redirect:/";
 	}
 	
@@ -51,9 +64,10 @@ public class UsuarioController {
 	
 	@PostMapping(value = "/valida")
 	public String validar(Model model, @RequestParam String email, @RequestParam String senha) {		
-		Usuario user = usuarioService.validar(email,senha);
-		if(user != null) {
-			model.addAttribute("user", user);
+		userSession = usuarioService.validar(email,senha);
+		
+		if(userSession != null) {
+			model.addAttribute("user", userSession);
 			return "home";
 		}
 		

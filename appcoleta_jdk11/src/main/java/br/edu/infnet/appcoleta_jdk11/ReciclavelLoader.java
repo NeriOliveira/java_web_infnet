@@ -9,15 +9,15 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appcoleta_jdk11.controller.ReciclavelController;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Reciclavel;
+import br.edu.infnet.appcoleta_jdk11.model.service.ReciclavelService;
 
 @Order(2)
 @Component
 public class ReciclavelLoader implements ApplicationRunner {
 	
 	@Autowired
-	private ReciclavelController reciclavelController;
+	private ReciclavelService reciclavelService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -39,7 +39,7 @@ public class ReciclavelLoader implements ApplicationRunner {
 				Reciclavel.valueOf(campos[5])
 			);
 			
-			reciclavelController.incluir(reciclavel);
+			reciclavelService.incluir(reciclavel);
 			
 			linha = leitura.readLine();			
 		}

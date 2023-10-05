@@ -1,47 +1,47 @@
 package br.edu.infnet.appcoleta_jdk11.controller;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
+import br.edu.infnet.appcoleta_jdk11.model.service.OleoService;
 
 @Controller
 public class OleoController {
 	
-	private Map<Integer, Oleo> mapaOleo = new HashMap<Integer, Oleo>();
-	
-	public Collection<Oleo> obterLista(){
-		return mapaOleo.values();
-	}
-	
-	public void incluir(Oleo oleo) {
-		mapaOleo.put(oleo.getCodigo(), oleo);
-		System.out.println("[Óleo " + oleo.getCodigo() + "] Solicitação de coleta realizada com sucesso: " + oleo);
-	}
-	
-	public void excluir(Integer codigo) {
-		mapaOleo.remove(codigo);
-	}
+	@Autowired
+	private OleoService oleoService;
 	
 
 	@GetMapping(value = "/oleo/lista")
 	public String telaLista(Model model) {
 		
-		model.addAttribute("listaOleo", obterLista());
+		model.addAttribute("listaOleo", oleoService.obterLista());
 		
 		return "oleo/lista";
+	}
+	
+	@GetMapping(value = "/oleo/cadastro")
+	public String telaCadastro() {
+		return "oleo/cadastro";
 	}
 	
 	@GetMapping(value = "/oleo/{codigo}/excluir")
 	public String exclusao(@PathVariable Integer codigo) {
 		
-        excluir(codigo);
+		oleoService.excluir(codigo);
+		
+		return "redirect:/oleo/lista";
+	}
+	
+	@PostMapping(value = "/oleo/incluir")
+	public String incluir(Oleo oleo) {
+		
+		oleoService.incluir(oleo);
 		
 		return "redirect:/oleo/lista";
 	}

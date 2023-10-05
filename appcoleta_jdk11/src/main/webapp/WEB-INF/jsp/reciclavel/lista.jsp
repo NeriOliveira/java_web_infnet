@@ -11,6 +11,7 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container mt-3">
 	<h2>Listagem de Recicláveis:</h2>
+		<a href="/reciclavel/cadastro" class="btn btn-success">Incluir Novo</a>
 		<h3>Resíduos Cadastrados</h3>
 		<table class="table table-striped">
 			<thead>
@@ -39,15 +40,7 @@
 			</tbody>
 		</table>
 	</div>
-	<hr>
-	<div class="text-center">
-		<h6>
-			<b>Aluno:</b> Patrick Neri de Oliveira
-		</h6>
-		<h6>
-			<b>Professor:</b> Elberth Moraes
-		</h6>
-	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 
 </body>
 </html>

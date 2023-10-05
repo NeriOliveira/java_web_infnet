@@ -6,53 +6,41 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>APP Coleta Seletiva</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet">
 </head>
 <body>
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
-
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
-		<h2>Listagem de Recicláveis:</h2>
-
-		<h4>Resíduos Cadastrados</h4>
+		<h2>Listagem de Entulhos:</h2>
+		<a href="/entulho/cadastro" class="btn btn-success">Incluir Novo</a>
+		<h3>Resíduos Cadastrados</h3>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Nome</th>
 					<th>Código</th>
 					<th>Observação</th>
-					<th>Peso</th>
-					<th>Está limpo?</th>
+					<th>Volume (m³l)</th>
+					<th>Está em obra?</th>
 					<th>Tipo</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="r" items="${listaReciclavel}">
+				<c:forEach var="e" items="${listaEntulho}">
 					<tr>
-						<td>${r.nome}</td>
-						<td>${r.codigo}</td>
-						<td>${r.observacao}</td>
-						<td>${r.peso}</td>
-						<td>${r.isLimpo}</td>
-						<td>${r.tipo}</td>
-						<td><a href="/reciclavel/${r.codigo}/excluir">excluir</a></td>
+						<td>${e.nome}</td>
+						<td>${e.codigo}</td>
+						<td>${e.observacao}</td>
+						<td>${e.volume}</td>
+						<td>${e.obra}</td>
+						<td>${e.tipo}</td>
+						<td><a href="/entulho/${e.codigo}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-	<hr>
-	<div class="text-center">
-		<h6>
-			<b>Aluno:</b> Patrick Neri de Oliveira
-		</h6>
-		<h6>
-			<b>Professor:</b> Elberth Moraes
-		</h6>
-	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp" />
 
 </body>
 </html>

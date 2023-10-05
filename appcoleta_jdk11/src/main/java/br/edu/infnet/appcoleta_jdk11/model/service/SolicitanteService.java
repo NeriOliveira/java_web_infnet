@@ -10,7 +10,8 @@ import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
 
 @Service
 public class SolicitanteService {
-private Map<String, Solicitante> mapaSolicitante = new HashMap<String, Solicitante>();
+	
+	private Map<String, Solicitante> mapaSolicitante = new HashMap<String, Solicitante>();
 	
 	public Collection<Solicitante> obterLista(){
 		return mapaSolicitante.values();

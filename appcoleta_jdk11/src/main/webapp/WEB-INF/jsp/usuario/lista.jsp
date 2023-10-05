@@ -11,8 +11,9 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container mt-3">
 		<h2>Listagem de usuários:</h2>
-		<table class="table table-striped">
+		<a href="/usuario/cadastro" class="btn btn-success">Incluir Novo</a>
 		<h3>Usuário</h3>
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Nome</th>
@@ -33,15 +34,7 @@
 			</tbody>
 		</table>
 	</div>
-	<hr>
-	<div class="text-center">
-		<h6>
-			<b>Aluno:</b> Patrick Neri de Oliveira
-		</h6>
-		<h6>
-			<b>Professor:</b> Elberth Moraes
-		</h6>
-	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 
 </body>
 </html>

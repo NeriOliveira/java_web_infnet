@@ -12,15 +12,7 @@
 		<h3>App Coleta Seletiva</h3>
 		<p>Aplicação de agendamento para realização de coleta seletiva. Ajude o meio ambiente.</p>
 		<c:import url="/WEB-INF/jsp/carousel.jsp"/>
-	<hr>
-	<div class="text-center">
-		<h6>
-			<b>Aluno:</b> Patrick Neri de Oliveira
-		</h6>
-		<h6>
-			<b>Professor:</b> Elberth Moraes
-		</h6>
 	</div>
-	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

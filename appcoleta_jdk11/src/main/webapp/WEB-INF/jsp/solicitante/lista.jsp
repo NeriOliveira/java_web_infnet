@@ -12,8 +12,7 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
 	<h2>Listagem de solicitantes:</h2>
-	<button type="button" class="btn btn-success"
-		href="/solicitante/cadastro">Incluir Novo</button>
+	<a href="/solicitante/cadastro" class="btn btn-success">Incluir Novo</a>
 		<h3>Coleta</h3>
 		<table class="table table-striped">
 			<thead>
@@ -36,15 +35,7 @@
 			</tbody>
 		</table>
 	</div>
-	<hr>
-	<div class="text-center">
-		<h6>
-			<b>Aluno:</b> Patrick Neri de Oliveira
-		</h6>
-		<h6>
-			<b>Professor:</b> Elberth Moraes
-		</h6>
-	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 
 </body>
 </html>
