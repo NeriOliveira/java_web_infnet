@@ -11,7 +11,7 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
 		<h2>Listagem de Entulhos:</h2>
-		<a href="/entulho/cadastro" class="btn btn-success">Incluir Novo</a>
+		<a href="/entulho/cadastro" class="btn btn-success">Inserir</a>
 		<h3>Resíduos Cadastrados</h3>
 		<table class="table table-striped">
 			<thead>
@@ -19,9 +19,9 @@
 					<th>Nome</th>
 					<th>Código</th>
 					<th>Observação</th>
-					<th>Volume (m³l)</th>
+					<th>Volume (m³)</th>
 					<th>Está em obra?</th>
-					<th>Tipo</th>
+					<th>Classe</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -33,7 +33,7 @@
 						<td>${e.observacao}</td>
 						<td>${e.volume}</td>
 						<td>${e.obra}</td>
-						<td>${e.tipo}</td>
+						<td>${e.classe}</td>
 						<td><a href="/entulho/${e.codigo}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

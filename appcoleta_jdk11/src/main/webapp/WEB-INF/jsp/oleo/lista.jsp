@@ -11,7 +11,7 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
 		<h2>Listagem de Óleos:</h2>
-		<a href="/oleo/cadastro" class="btn btn-success">Incluir Novo</a>
+		<a href="/oleo/cadastro" class="btn btn-success">Inserir</a>
 		<h3>Resíduos Cadastrados</h3>
 		<table class="table table-striped">
 			<thead>
@@ -19,7 +19,7 @@
 					<th>Nome</th>
 					<th>Código</th>
 					<th>Observação</th>
-					<th>Volume (l)</th>
+					<th>Volume (litros)</th>
 					<th>Está limpo?</th>
 					<th>Tipo</th>
 					<th></th>

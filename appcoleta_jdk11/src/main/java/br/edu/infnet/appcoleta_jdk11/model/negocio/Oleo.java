@@ -47,7 +47,7 @@ public class Oleo extends Residuo{
 	
 	@Override
 	public String toString() {
-		return String.format("Tipo: %s; Volume: %.2f litro(s); Está limpo? %s", getTipo(), getVolume(), isLimpo());
+		return String.format("{ÓLEO: Tipo: %s; Volume: %.2f litro(s); Está limpo? %s}", getTipo(), getVolume(), isLimpo());
 	}
 	
     public static OleoTipo valueOf(String s) {

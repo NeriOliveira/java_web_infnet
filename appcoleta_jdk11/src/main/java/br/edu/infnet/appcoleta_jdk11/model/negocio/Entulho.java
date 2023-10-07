@@ -54,7 +54,7 @@ public class Entulho extends Residuo{
 	
 	@Override
 	public String toString() {
-		return String.format("Classe: %s; Volume: %.2f m³; Está em uma obra? %s", getClasse(), getVolume(), isObra());
+		return String.format("{ENTULHO: Classe: %s; Volume: %.2f m³; Está em uma obra? %s}", getClasse(), getVolume(), isObra());
 	}
 	
 	

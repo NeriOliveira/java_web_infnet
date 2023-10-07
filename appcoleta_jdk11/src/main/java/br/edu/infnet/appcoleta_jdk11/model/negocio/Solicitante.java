@@ -1,6 +1,7 @@
 package br.edu.infnet.appcoleta_jdk11.model.negocio;
 
 public class Solicitante {
+	private Integer id;
     private String nome;
     private String cpf;
     private String email;
@@ -42,5 +43,13 @@ public class Solicitante {
 	@Override
 	public String toString() {
 		return String.format("Nome: %s; CPF: %s; E-mail: %s", getNome(), getCpf(), getEmail());
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }

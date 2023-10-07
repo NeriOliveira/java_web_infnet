@@ -47,7 +47,7 @@ public class Reciclavel extends Residuo {
 
 	@Override
 	public String toString() {
-		return String.format("Tipo: %s; Peso: %.2f kg; Está limpo? %s", getTipo(), getPeso(), isLimpo());
+		return String.format("{RECICLÁVEL: Tipo: %s; Peso: %.2f kg; Está limpo? %s}", getTipo(), getPeso(), isLimpo());
 	}
 
 	public static ReciclavelTipo valueOf(String s) {

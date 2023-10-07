@@ -10,31 +10,29 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
-		<h2>Listagem de Óleos:</h2>
-		<a href="/oleo/cadastro" class="btn btn-success">Incluir Novo</a>
-		<h3>Resíduos Cadastrados</h3>
+		<h2>Listagem de Coletas:</h2>
+		<a href="/coleta/cadastro" class="btn btn-success">Inserir</a>
+		<h3>Pedidos Cadastrados</h3>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Nome</th>
-					<th>Código</th>
-					<th>Observação</th>
-					<th>Volume (l)</th>
-					<th>Está limpo?</th>
-					<th>Tipo</th>
+					<th>Descrição</th>
+					<th>Data</th>
+					<th>Pendente?</th>
+					<th>Solicitante</th>
+					<th>Resíduos</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="o" items="${listaOleo}">
+				<c:forEach var="c" items="${listaColeta}">
 					<tr>
-						<td>${o.nome}</td>
-						<td>${o.codigo}</td>
-						<td>${o.observacao}</td>
-						<td>${o.volume}</td>
-						<td>${o.limpo}</td>
-						<td>${o.tipo}</td>
-						<td><a href="/oleo/${o.codigo}/excluir">excluir</a></td>
+						<td>${c.descricao}</td>
+						<td>${c.data}</td>
+						<td>${c.pendente}</td>
+						<td>${c.solicitante}</td>
+						<td>${c.residuos}</td>
+						<td><a href="/coleta/${c.data}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

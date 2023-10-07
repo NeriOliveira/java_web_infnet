@@ -11,7 +11,7 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
 		<h3>Cadastro de Resíduo: Entulho</h3>
-		<form action="/oleo/incluir" method="post">
+		<form action="/entulho/incluir" method="post">
 			<div class="mb-3 mt-3">
 				<label for="nome">Nome:</label> <input type="text"
 					class="form-control" id="nome" placeholder="Entre com o seu nome"
@@ -42,10 +42,10 @@
 			</div>
 			<br>
 			<div class="mb-3 mt-3">
-				<label for="tipo">Tipo:</label> <input type="text"
-					class="form-control" id="tipo"
-					placeholder="Automotivo, Cozinha, Hidraulico, Termico, Outro"
-					name="tipo">
+				<label for="classe">Classe:</label> <input type="text"
+					class="form-control" id="classe"
+					placeholder="Digite apenas a letra maiúscula: A, B, C ou D"
+					name="classe">
 			</div>
 			<br>
 			<button type="submit" class="btn btn-success">Cadastrar</button>

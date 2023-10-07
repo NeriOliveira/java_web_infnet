@@ -21,8 +21,8 @@
 				<li><a href="#" style= "color: #b7d7d8;"><b>Resíduos</b></a></li>
 				<li><a href="/oleo/lista" style= "color: #b7d7d8;"><b>Óleo</b></a></li>
 				<li><a href="/reciclavel/lista" style= "color: #b7d7d8;"><b>Reciclável</b></a></li>
-				<li><a href="#" style= "color: #b7d7d8;"><b>Entulho</b></a></li>
-				<li><a href="#" style= "color: #b7d7d8;"><b>Coleta</b></a></li>
+				<li><a href="/entulho/lista" style= "color: #b7d7d8;"><b>Entulho</b></a></li>
+				<li><a href="/coleta/lista" style= "color: #b7d7d8;"><b>Coleta</b></a></li>
 				<li><a href="/sobre" style= "color: #b7d7d8;"><b>Sobre</b></a></li>
 			</c:if>
 		</ul>

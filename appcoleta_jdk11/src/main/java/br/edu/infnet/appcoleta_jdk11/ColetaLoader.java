@@ -2,11 +2,9 @@ package br.edu.infnet.appcoleta_jdk11;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -17,6 +15,7 @@ import br.edu.infnet.appcoleta_jdk11.model.negocio.Entulho;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Reciclavel;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Residuo;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
+import br.edu.infnet.appcoleta_jdk11.model.service.ColetaService;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 
 
@@ -24,10 +23,14 @@ import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 @Component
 public class ColetaLoader implements ApplicationRunner {
 	
+	@Autowired
+	private ColetaService coletaService;
+
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		Map<LocalDateTime, Coleta> mapaColeta = new HashMap<LocalDateTime, Coleta>();
+		
+		//Map<LocalDateTime, Coleta> mapaColeta = new HashMap<LocalDateTime, Coleta>();
 		FileReader file = new FileReader("arquivos/coleta.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		String linha = leitura.readLine();
@@ -43,7 +46,8 @@ public class ColetaLoader implements ApplicationRunner {
 						new Solicitante(campos[2], campos[3], campos[4]),
 						new ArrayList<Residuo>()
 						);
-				mapaColeta.put(coleta.getData(), coleta);
+				coletaService.mapaColeta.put(coleta.getData(), coleta);
+				//mapaColeta.put(coleta.getData(), coleta);
 				break;
 				
 			case "O":
@@ -55,6 +59,7 @@ public class ColetaLoader implements ApplicationRunner {
 						Boolean.valueOf(campos[5]),
 						Oleo.valueOf(campos[6])
 					);
+				
 				coleta.getResiduos().add(oleo);
 				break;
 				
@@ -82,9 +87,13 @@ public class ColetaLoader implements ApplicationRunner {
 				coleta.getResiduos().add(entulho);
 				break;
 			}
+			
+			coletaService.incluir(coleta);
+			
+			
 			linha = leitura.readLine();
 		}
-		for(Coleta c : mapaColeta.values()) {
+		for(Coleta c : coletaService.mapaColeta.values()) {
 			System.out.println("[Coleta] Solicitação incluida com sucesso: " + c);
 		}
 		leitura.close();

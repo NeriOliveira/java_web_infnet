@@ -10,46 +10,49 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
-		<h3>Cadastro de Resíduo: Óleo</h3>
-		<form action="/oleo/incluir" method="post">
-			<div class="mb-3 mt-3">
-				<label for="nome">Nome:</label> <input type="text"
-					class="form-control" id="nome" placeholder="Entre com o seu nome"
-					name="nome">
+		<h3>Cadastro de Pedido de Coleta:</h3>
+		<form action="/coleta/incluir" method="post">
+	    <div class="form-group">
+	      <label>Descrição:</label>
+	      <input type="text" class="form-control" placeholder="Entre com a descrição" name="descricao">
+	    </div>
+	    <div class="form-group">
+	      <label>Data:</label>
+	      <input type="datetime-local" class="form-control" name="dtSolicitante">
+	    </div>
+	    <div class="form-group">
+	      <label>Status:</label>
+			<div class="form-check">
+			  <input type="radio" class="form-check-input" name="pendente" value="true"> Pendente
+			  <label class="form-check-label"></label>
 			</div>
-			<br>
-			<div class="mb-3 mt-3">
-				<label for="codigo">Código:</label> <input type="text"
-					class="form-control" id="codigo"
-					placeholder="Entre com um código para este cadastro" name="codigo">
+			<div class="form-check">
+			  <input type="radio" class="form-check-input" name="pendente" value="false"> Coletado
+			  <label class="form-check-label"></label>
 			</div>
-			<br>
-			<div class="mb-3 mt-3">
-				<label for="observacao">Observação:</label> <input type="text"
-					class="form-control" id="observacao"
-					placeholder="Alguma observação para esta coleta?" name="observacao">
-			</div>
-			<br>
-			<div class="mb-3 mt-3">
-				<label for="volume">Volume (litros):</label> <input type="number"
-					step=".01" class="form-control" id="volume"
-					placeholder="Exemplo: 72,50" name="volume">
-			</div>
-			<br>
-			<div class="mb-3 mt-3">
-				<label for="limpo">Está limpo?</label> <input type="checkbox"
-					class="form-control" id="limpo" name="limpo">
-			</div>
-			<br>
-			<div class="mb-3 mt-3">
-				<label for="tipo">Tipo:</label> <input type="text"
-					class="form-control" id="tipo"
-					placeholder="Automotivo, Cozinha, Hidraulico, Termico, Outro"
-					name="tipo">
-			</div>
-			<br>
-			<button type="submit" class="btn btn-success">Cadastrar</button>
-		</form>
+	    </div>
+
+	    <div class="form-group">
+	      <label>Solicitante:</label>
+	      <select name="solicitante" class="form-control">
+	      	<c:forEach var="s" items="${solicitantes}">
+	      		<option value="${s.id}">${s.nome}</option>
+	      	</c:forEach>
+	      </select>
+	    </div>
+
+	    <div class="form-group">
+	      <label>Resíduos:</label>
+	      	<c:forEach var="r" items="${residuos}">
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" name="residuos" value="${r.id}">
+				  <label class="form-check-label"> ${r.nome}</label>
+				</div>	   
+			</c:forEach>   
+	    </div>
+
+	    <button type="submit" class="btn btn-default">Cadastrar</button>
+	  </form>
 	</div>
 	<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>

@@ -19,7 +19,7 @@ public class EntulhoService {
 	
 	public void incluir(Entulho entulho) {
 		mapaEntulho.put(entulho.getCodigo(), entulho);
-		System.out.println("[Óleo " + entulho.getCodigo() + "] Solicitação de coleta realizada com sucesso: " + entulho);
+		System.out.println("[Entulho " + entulho.getCodigo() + "] Solicitação de coleta realizada com sucesso: " + entulho);
 	}
 	
 	public void excluir(Integer codigo) {

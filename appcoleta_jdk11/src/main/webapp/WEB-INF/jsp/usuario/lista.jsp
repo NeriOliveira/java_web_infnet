@@ -11,7 +11,7 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container mt-3">
 		<h2>Listagem de usuários:</h2>
-		<a href="/usuario/cadastro" class="btn btn-success">Incluir Novo</a>
+		<a href="/usuario/cadastro" class="btn btn-success">Inserir</a>
 		<h3>Usuário</h3>
 		<table class="table table-striped">
 			<thead>
@@ -27,7 +27,7 @@
 					<tr>
 						<td>${u.nome}</td>
 						<td>${u.email}</td>
-						<td type="password">${u.senha}</td>
+						<td><input type="password" value="${u.senha}"></td>
 						<td><a href="/usuario/${u.email}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

@@ -11,7 +11,7 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<div class="container mt-3">
 	<h2>Listagem de Recicláveis:</h2>
-		<a href="/reciclavel/cadastro" class="btn btn-success">Incluir Novo</a>
+		<a href="/reciclavel/cadastro" class="btn btn-success">Inserir</a>
 		<h3>Resíduos Cadastrados</h3>
 		<table class="table table-striped">
 			<thead>
