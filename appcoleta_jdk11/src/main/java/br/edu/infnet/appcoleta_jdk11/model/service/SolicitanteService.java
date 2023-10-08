@@ -4,26 +4,40 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
+//import br.edu.infnet.appcoleta_jdk11.model.repository.SolicitanteRepository;
 
 @Service
 public class SolicitanteService {
 	
-	private Map<String, Solicitante> mapaSolicitante = new HashMap<String, Solicitante>();
+//	@Autowired
+//	private SolicitanteRepository solicitanteRepository;
+	
+	private Map<Integer, Solicitante> mapaSolicitante = new HashMap<Integer, Solicitante>();
+	private Integer id = 0;
 	
 	public Collection<Solicitante> obterLista(){
 		return mapaSolicitante.values();
+//		return (Collection<Solicitante>) solicitanteRepository.findAll();
 	}
 	
 	public void incluir(Solicitante solicitante) {
-		mapaSolicitante.put(solicitante.getCpf(), solicitante);
-		System.out.println("[Solicitante " + solicitante.getCpf() + "] Solicitação de coleta realizada com sucesso: " + solicitante);
+		
+		id++;
+		solicitante.setId(id);
+		mapaSolicitante.put(solicitante.getId(), solicitante);
+		System.out.println("[Solicitante ID: " + solicitante.getId() + "] Solicitação de coleta realizada com sucesso: " + solicitante);
+		
+//		solicitanteRepository.save(solicitante);
 	}
 	
-	public void excluir(String cpf) {
-		mapaSolicitante.remove(cpf);
+	public void excluir(Integer id) {
+		mapaSolicitante.remove(id);
+		
+//		solicitanteRepository.deleteById(id);
 	}
 	
 }

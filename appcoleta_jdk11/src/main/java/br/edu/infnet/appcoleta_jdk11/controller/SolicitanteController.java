@@ -29,10 +29,10 @@ public class SolicitanteController {
 		return "solicitante/cadastro";
 	}
 	
-	@GetMapping(value = "/solicitante/{cpf}/excluir")
-	public String exclusao(@PathVariable String cpf) {
+	@GetMapping(value = "/solicitante/{id}/excluir")
+	public String exclusao(@PathVariable Integer id) {
 		
-		solicitanteService.excluir(cpf);
+		solicitanteService.excluir(id);
 		
 		return "redirect:/solicitante/lista";
 	}
