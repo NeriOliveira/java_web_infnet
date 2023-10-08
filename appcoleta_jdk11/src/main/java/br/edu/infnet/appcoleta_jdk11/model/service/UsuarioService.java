@@ -33,7 +33,7 @@ public class UsuarioService {
 	
 	public void excluir(String email) {
 		
-//		Usuario user = usuarioRepository.findEmail(email);
+//		Usuario user = usuarioRepository.findEmail(email);	
 //		usuarioRepository.deleteById(id);
 	
 		mapaUsuario.remove(email);
