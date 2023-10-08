@@ -93,9 +93,7 @@ public class ColetaLoader implements ApplicationRunner {
 			
 			linha = leitura.readLine();
 		}
-		for(Coleta c : coletaService.mapaColeta.values()) {
-			System.out.println("[Coleta] Solicitação incluida com sucesso: " + c);
-		}
+
 		leitura.close();
 	}
 

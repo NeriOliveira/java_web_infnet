@@ -1,7 +1,5 @@
 package br.edu.infnet.appcoleta_jdk11.controller;
 
-import java.time.LocalDateTime;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,10 +30,10 @@ public class ColetaController {
 		return "coleta/cadastro";
 	}
 	
-	@GetMapping(value = "/coleta/{data}/excluir")
-	public String exclusao(@PathVariable LocalDateTime data) {
+	@GetMapping(value = "/coleta/{id}/excluir")
+	public String exclusao(@PathVariable Integer id) {
 		
-		coletaService.excluir(data);
+		coletaService.excluir(id);
 		
 		return "redirect:/coleta/lista";
 	}

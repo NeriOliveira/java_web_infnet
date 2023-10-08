@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Coleta {
+	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
 	private boolean pendente;
@@ -64,6 +65,14 @@ public class Coleta {
 		this.residuos = residuos;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	@Override
 	public String toString() {
 		return descricao + ";" + data + ";" + pendente + ";" + solicitante + ";" + residuos.size();

@@ -16,6 +16,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Descrição</th>
 					<th>Data</th>
 					<th>Pendente?</th>
@@ -27,12 +28,13 @@
 			<tbody>
 				<c:forEach var="c" items="${listaColeta}">
 					<tr>
+						<td>${c.id}</td>
 						<td>${c.descricao}</td>
 						<td>${c.data}</td>
 						<td>${c.pendente}</td>
 						<td>${c.solicitante}</td>
 						<td>${c.residuos}</td>
-						<td><a href="/coleta/${c.data}/excluir">excluir</a></td>
+						<td><a href="/coleta/${c.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

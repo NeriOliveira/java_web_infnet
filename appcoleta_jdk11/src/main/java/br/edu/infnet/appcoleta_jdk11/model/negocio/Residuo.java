@@ -1,6 +1,7 @@
 package br.edu.infnet.appcoleta_jdk11.model.negocio;
 
 public abstract class Residuo {
+	private Integer id;
 	private String nome;
 //	private float valor;
 	private int codigo;
@@ -47,6 +48,14 @@ public abstract class Residuo {
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 	@Override

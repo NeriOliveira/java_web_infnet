@@ -14,18 +14,22 @@ public class ColetaService {
 	
 	public Map<LocalDateTime, Coleta> mapaColeta = new HashMap<LocalDateTime, Coleta>();
 	
+	private Integer id = 0;
+	
 	public Collection<Coleta> obterLista(){
 		return mapaColeta.values();
 	}
 	
 	public void incluir(Coleta coleta) {
 		
+		id++;
+		coleta.setId(id);
 		mapaColeta.put(coleta.getData(), coleta);
-		System.out.println("[Coleta " + coleta.getData() + "] Solicitação de coleta realizada com sucesso: " + coleta);
+		System.out.println("[Coleta ID: " + coleta.getId() + "] Solicitação de coleta realizada com sucesso: " + coleta);
 	}
 	
-	public void excluir(LocalDateTime data) {
-		mapaColeta.remove(data);
+	public void excluir(Integer id) {
+		mapaColeta.remove(id);
 	}
 	
 }
