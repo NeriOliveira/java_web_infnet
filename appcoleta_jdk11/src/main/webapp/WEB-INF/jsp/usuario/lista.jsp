@@ -16,6 +16,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Nome</th>
 					<th>CPF</th>
 					<th>Senha</th>
@@ -25,10 +26,11 @@
 			<tbody>
 				<c:forEach var="u" items="${listaUsuario}">
 					<tr>
+						<td>${s.id}</td>
 						<td>${u.nome}</td>
 						<td>${u.email}</td>
 						<td><input type="password" value="${u.senha}"></td>
-						<td><a href="/usuario/${u.email}/excluir">excluir</a></td>
+						<td><a href="/usuario/${s.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

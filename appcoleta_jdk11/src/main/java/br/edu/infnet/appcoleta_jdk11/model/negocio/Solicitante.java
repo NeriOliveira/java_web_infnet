@@ -17,6 +17,9 @@ public class Solicitante {
     private String nome;
     private String cpf;
     private String email;
+//    @ManyToOne
+//    @JoinColumn(name - "idUsuario")
+    private Usuario usuario;
 
     public Solicitante() {
 		// TODO Auto-generated constructor stub

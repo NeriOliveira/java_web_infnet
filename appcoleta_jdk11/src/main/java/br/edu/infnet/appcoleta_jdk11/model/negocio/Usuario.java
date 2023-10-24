@@ -1,5 +1,7 @@
 package br.edu.infnet.appcoleta_jdk11.model.negocio;
 
+import java.util.List;
+
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
@@ -15,6 +17,9 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+//    @OneToMany
+//    @JoinColumn(name - "idUsuario")
+    private List<Solicitante> solicitante;
 
     public Usuario() {
 		// TODO Auto-generated constructor stub

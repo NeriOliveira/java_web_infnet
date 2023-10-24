@@ -17,6 +17,7 @@ public class UsuarioService {
 //	private UsuarioRepository usuarioRepository;
 	
 	private Map<String, Usuario> mapaUsuario = new HashMap<String, Usuario>();
+	private Integer id = 0;
 	
 	public Collection<Usuario> obterLista(){
 //		return (Collection<Usuario>) usuarioRepository.findAll();
@@ -27,8 +28,11 @@ public class UsuarioService {
 		
 //		usuarioRepository.save(usuario);
 		
+		id++;
+		usuario.setId(id);
+//		mapaUsuario.put(usuario.getId(), usuario);
 		mapaUsuario.put(usuario.getEmail(), usuario);
-		System.out.println("[Usuário " + usuario.getEmail() + "] Cadastro de usuário realizado com sucesso: " + usuario);
+		System.out.println("[Usuário " + usuario.getId() + "] Cadastro de usuário realizado com sucesso: " + usuario);
 	}
 	
 	public void excluir(String email) {
