@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
@@ -54,9 +53,9 @@ public class UsuarioController {
 	}
 	
 	@GetMapping(value = "/usuario/{id}/excluir")
-	public String excluir(@PathVariable String email) {
+	public String excluir(@PathVariable Integer id) {
 		
-		usuarioService.excluir(email);
+		usuarioService.excluir(id);
 		
 		return "redirect:/usuario/lista";
 	}

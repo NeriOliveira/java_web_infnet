@@ -10,9 +10,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 import br.edu.infnet.appcoleta_jdk11.model.service.SolicitanteService;
 
-@Order(4)
+@Order(8)
 @Component
 public class SolicitanteLoader implements ApplicationRunner {
 	
@@ -35,6 +36,7 @@ public class SolicitanteLoader implements ApplicationRunner {
 					campos[1], 
 					campos[2]
 					);
+			solicitante.setUsuario(new Usuario(1));
 			
 			solicitanteService.incluir(solicitante);
 			

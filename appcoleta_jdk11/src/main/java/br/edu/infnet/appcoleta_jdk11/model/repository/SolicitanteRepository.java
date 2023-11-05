@@ -1,6 +1,6 @@
 package br.edu.infnet.appcoleta_jdk11.model.repository;
 
-/*
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -20,4 +20,3 @@ public interface SolicitanteRepository extends CrudRepository<Solicitante, Integ
 	//recuperar um
 
 }
-*/

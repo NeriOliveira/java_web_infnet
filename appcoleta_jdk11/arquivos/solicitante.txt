@@ -1,4 +1,4 @@
-Patrick;40;patrick.noliveira@al.infnet.edu.br
-Maria;41;maria@al.infnet.edu.br
-Jose;42;jose@al.infnet.edu.br
-Otavio;43;otavio@al.infnet.edu.br
+Patrick;43380163880;patrick.noliveira@al.infnet.edu.br
+Maria;12345678910;maria@al.infnet.edu.br
+Jose;0123654987;jose@al.infnet.edu.br
+Otavio;9876431250;otavio@al.infnet.edu.br

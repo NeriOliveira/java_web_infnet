@@ -1,0 +1,5 @@
+admin@admin.com.br;Administrador;1
+patrick.noliveira@al.infnet.edu.br;Patrick;123
+maria@al.infnet.edu.br;Maria;123
+jose@al.infnet.edu.br;Jose;123
+otavio@al.infnet.edu.br;Otavio;123
