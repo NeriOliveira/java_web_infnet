@@ -10,9 +10,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Reciclavel;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 import br.edu.infnet.appcoleta_jdk11.model.service.ReciclavelService;
 
-@Order(2)
+@Order(3)
 @Component
 public class ReciclavelLoader implements ApplicationRunner {
 	
@@ -38,6 +39,8 @@ public class ReciclavelLoader implements ApplicationRunner {
 				Boolean.valueOf(campos[4]),
 				Reciclavel.valueOf(campos[5])
 			);
+			
+			reciclavel.setUsuario(new Usuario(Integer.valueOf(campos[6])));
 			
 			reciclavelService.incluir(reciclavel);
 			

@@ -10,10 +10,11 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Entulho;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 import br.edu.infnet.appcoleta_jdk11.model.service.EntulhoService;
 
 
-@Order(3)
+@Order(6)
 @Component
 public class EntulhoLoader implements ApplicationRunner {
 	
@@ -40,6 +41,8 @@ public class EntulhoLoader implements ApplicationRunner {
 						Boolean.valueOf(campos[4]), 
 						Entulho.valueOf(campos[5])
 					);
+			
+			entulho.setUsuario(new Usuario(Integer.valueOf(campos[6])));
 			
 			entulhoService.incluir(entulho);
 			

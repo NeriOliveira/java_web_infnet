@@ -1,29 +1,34 @@
 package br.edu.infnet.appcoleta_jdk11.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Entulho;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
+import br.edu.infnet.appcoleta_jdk11.model.repository.EntulhoRepository;
 
 @Service
 public class EntulhoService {
 	
-	private Map<Integer, Entulho> mapaEntulho = new HashMap<Integer, Entulho>();
+	@Autowired
+	private EntulhoRepository entulhoRepository;
 	
 	public Collection<Entulho> obterLista(){
-		return mapaEntulho.values();
+		return (Collection<Entulho>) entulhoRepository.findAll();
+	}
+	
+	public Collection<Entulho> obterLista(Usuario usuario){
+		return (Collection<Entulho>) entulhoRepository.obterLista(usuario.getId());
 	}
 	
 	public void incluir(Entulho entulho) {
-		mapaEntulho.put(entulho.getCodigo(), entulho);
-		System.out.println("[Entulho " + entulho.getCodigo() + "] Solicitação de coleta realizada com sucesso: " + entulho);
+		entulhoRepository.save(entulho);
 	}
 	
-	public void excluir(Integer codigo) {
-		mapaEntulho.remove(codigo);
+	public void excluir(Integer id) {
+		entulhoRepository.deleteById(id);
 	}
 	
 }

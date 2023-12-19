@@ -1,8 +1,6 @@
 package br.edu.infnet.appcoleta_jdk11;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.boot.ApplicationArguments;
@@ -13,7 +11,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
 
 
-@Order(6)
+@Order(5)
 @Component
 public class MapLoader implements ApplicationRunner {
 	
@@ -25,8 +23,6 @@ public class MapLoader implements ApplicationRunner {
 		Solicitante s3 = new Solicitante("Otavio", "234", "otavio@al.infnet.edu.br");
 
 
-		List<Solicitante> lista = new ArrayList<Solicitante>();
-		
 		Map<String, Solicitante> mapa = new HashMap<String, Solicitante>();
 		
 		mapa.put("111", s1);

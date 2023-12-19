@@ -16,6 +16,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Nome</th>
 					<th>Código</th>
 					<th>Observação</th>
@@ -28,13 +29,14 @@
 			<tbody>
 				<c:forEach var="e" items="${listaEntulho}">
 					<tr>
+						<td>${e.id}</td>
 						<td>${e.nome}</td>
 						<td>${e.codigo}</td>
 						<td>${e.observacao}</td>
 						<td>${e.volume}</td>
 						<td>${e.obra}</td>
 						<td>${e.classe}</td>
-						<td><a href="/entulho/${e.codigo}/excluir">excluir</a></td>
+						<td><a href="/entulho/${e.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

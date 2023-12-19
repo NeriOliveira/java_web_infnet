@@ -16,6 +16,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Nome</th>
 					<th>Código</th>
 					<th>Observação</th>
@@ -28,13 +29,14 @@
 			<tbody>
 				<c:forEach var="r" items="${listaReciclavel}">
 					<tr>
+						<td>${r.id}</td>
 						<td>${r.nome}</td>
 						<td>${r.codigo}</td>
 						<td>${r.observacao}</td>
 						<td>${r.peso}</td>
 						<td>${r.limpo}</td>
 						<td>${r.tipo}</td>
-						<td><a href="/reciclavel/${r.codigo}/excluir">excluir</a></td>
+						<td><a href="/reciclavel/${r.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

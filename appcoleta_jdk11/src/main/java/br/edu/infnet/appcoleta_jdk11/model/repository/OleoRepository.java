@@ -1,23 +1,19 @@
 package br.edu.infnet.appcoleta_jdk11.model.repository;
 
-<<<<<<< Updated upstream
-/*
-=======
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
->>>>>>> Stashed changes
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 
 @Repository
-public interface SolicitanteRepository extends CrudRepository<Solicitante, Integer>{
+public interface OleoRepository extends CrudRepository<Oleo, Integer>{
 	
-	@Query("from Solicitante s where s.solicitanteusuario.usuarioid = :userid")
-	public List<Solicitante> obterLista(Integer userid);
+	@Query("from Oleo o where o.residuousuario.usuarioid = :userid")
+	public List<Oleo> obterLista(Integer userid);
 	
 	//incluir
 	
@@ -30,4 +26,3 @@ public interface SolicitanteRepository extends CrudRepository<Solicitante, Integ
 	//recuperar um
 
 }
-*/

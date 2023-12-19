@@ -1,29 +1,34 @@
 package br.edu.infnet.appcoleta_jdk11.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Reciclavel;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
+import br.edu.infnet.appcoleta_jdk11.model.repository.ReciclavelRepository;
 
 @Service
 public class ReciclavelService {
 	
-	private Map<Integer, Reciclavel> mapaReciclavel = new HashMap<Integer, Reciclavel>();
+	@Autowired
+	private ReciclavelRepository reciclavelRepository;
 	
 	public Collection<Reciclavel> obterLista(){
-		return mapaReciclavel.values();
+		return (Collection<Reciclavel>) reciclavelRepository.findAll();
+	}
+	
+	public Collection<Reciclavel> obterLista(Usuario usuario){
+		return (Collection<Reciclavel>) reciclavelRepository.obterLista(usuario.getId());
 	}
 	
 	public void incluir(Reciclavel reciclavel) {
-		mapaReciclavel.put(reciclavel.getCodigo(), reciclavel);
-		System.out.println("[Reciclável " + reciclavel.getCodigo() + "] Solicitação de coleta realizada com sucesso: " + reciclavel.toString());
+		reciclavelRepository.save(reciclavel);
 	}
 	
-	public void excluir(int codigo) {
-		mapaReciclavel.remove(codigo);
+	public void excluir(Integer id) {
+		reciclavelRepository.deleteById(id);
 	}
 	
 }

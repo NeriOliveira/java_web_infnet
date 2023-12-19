@@ -2,7 +2,10 @@ package br.edu.infnet.appcoleta_jdk11;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -12,14 +15,15 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Coleta;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Entulho;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Reciclavel;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Residuo;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 import br.edu.infnet.appcoleta_jdk11.model.service.ColetaService;
-import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 
 
-@Order(5)
+@Order(7)
 @Component
 public class ColetaLoader implements ApplicationRunner {
 	
@@ -29,9 +33,9 @@ public class ColetaLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
+		Map<LocalDateTime, Coleta> mapaColeta = new HashMap<LocalDateTime, Coleta>();
 		
-		//Map<LocalDateTime, Coleta> mapaColeta = new HashMap<LocalDateTime, Coleta>();
-		FileReader file = new FileReader("arquivos/coleta.txt");
+		FileReader file = new FileReader("arquivos/coletaSolicitante.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		String linha = leitura.readLine();
 		String[] campos = null;
@@ -43,55 +47,35 @@ public class ColetaLoader implements ApplicationRunner {
 			case "C":
 				coleta = new Coleta(
 						campos[1],
-						new Solicitante(campos[2], campos[3], campos[4]),
+						new Solicitante(Integer.valueOf(campos[2])),
 						new ArrayList<Residuo>()
 						);
-				coletaService.mapaColeta.put(coleta.getData(), coleta);
-				//mapaColeta.put(coleta.getData(), coleta);
+				
+				coletaService.incluir(coleta);
 				break;
 				
 			case "O":
-				Oleo oleo = new Oleo(
-						campos[1], 
-						Integer.valueOf(campos[2]), 
-						campos[3], 
-						Float.valueOf(campos[4]), 
-						Boolean.valueOf(campos[5]),
-						Oleo.valueOf(campos[6])
-					);
-				
-				coleta.getResiduos().add(oleo);
+				coleta.getResiduos().add(new Oleo(Integer.valueOf(campos[1])));
 				break;
 				
 			case "R":
-				Reciclavel reciclavel = new Reciclavel(
-						campos[1], 
-						Integer.valueOf(campos[2]), 
-						campos[3], 
-						Float.valueOf(campos[4]), 
-						Boolean.valueOf(campos[5]), 
-						Reciclavel.valueOf(campos[6])
-					);
-				coleta.getResiduos().add(reciclavel);
+				coleta.getResiduos().add(new Reciclavel(Integer.valueOf(campos[1])));
 				break;
 				
 			case "E":
-				Entulho entulho = new Entulho(
-						campos[1], 
-						Integer.valueOf(campos[2]), 
-						campos[3], 
-						Float.valueOf(campos[4]), 
-						Boolean.valueOf(campos[5]), 
-						Entulho.valueOf(campos[6])
-					);
-				coleta.getResiduos().add(entulho);
+				coleta.getResiduos().add(new Entulho(Integer.valueOf(campos[1])));
 				break;
 			}
-			
+			coleta.setUsuario(new Usuario(1));
 			coletaService.incluir(coleta);
-			
-			
 			linha = leitura.readLine();
+		}
+		
+		
+		
+		for(Coleta c: mapaColeta.values()) {
+//			coletaService.incluir(c);
+			System.out.println("[Coleta]  Inclusão realizada com sucesso: " + c);
 		}
 
 		leitura.close();

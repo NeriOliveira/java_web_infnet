@@ -10,8 +10,8 @@
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="container mt-3">
-		<h2>Listagem de Óleos:</h2>
-		<a href="/oleo/cadastro" class="btn btn-success">Inserir</a>
+		<h2>Listagem de Resíduos:</h2>
+		<!-- a href="/residuo/cadastro" class="btn btn-success">Inserir</a-->
 		<h3>Resíduos Cadastrados</h3>
 		<table class="table table-striped">
 			<thead>
@@ -20,23 +20,19 @@
 					<th>Nome</th>
 					<th>Código</th>
 					<th>Observação</th>
-					<th>Volume (litros)</th>
-					<th>Está limpo?</th>
-					<th>Tipo</th>
+					<th>Coletas</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="o" items="${listaOleo}">
+				<c:forEach var="r" items="${listaResiduo}">
 					<tr>
-						<td>${o.id}</td>
-						<td>${o.nome}</td>
-						<td>${o.codigo}</td>
-						<td>${o.observacao}</td>
-						<td>${o.volume}</td>
-						<td>${o.limpo}</td>
-						<td>${o.tipo}</td>
-						<td><a href="/oleo/${o.id}/excluir">excluir</a></td>
+						<td>${r.id}</td>
+						<td>${r.nome}</td>
+						<td>${r.codigo}</td>
+						<td>${r.observacao}</td>
+						<td>${r.coletas.size()}</td>
+						<td><a href="/residuo/${r.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

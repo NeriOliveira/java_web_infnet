@@ -11,6 +11,7 @@ import java.util.List;
 //@Entity
 //@Table(name = "TSolicitante")
 public class Usuario {
+<<<<<<< Updated upstream
 	//@Id
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -20,8 +21,29 @@ public class Usuario {
 //    @OneToMany
 //    @JoinColumn(name - "idUsuario")
     private List<Solicitante> solicitante;
+=======
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer usuarioid;
+	
+    private String usuarionome;
+    private String usuarioemail;
+    private String usuariosenha;
 
-    public Usuario() {
+	@OneToMany
+    @JoinColumn(name = "solicitanteusuarioid")
+    private List<Solicitante> solicitantes;
+	
+	@OneToMany
+	@JoinColumn(name = "residuousuarioid")
+	private List<Residuo> residuos;
+	
+	@OneToMany
+	@JoinColumn(name = "coletausuarioid")
+	private List<Coleta> coletas;
+>>>>>>> Stashed changes
+
+	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}    
     
@@ -67,4 +89,32 @@ public class Usuario {
 	public String toString() {
 		return String.format("Nome: %s; CPF: %s; E-mail: %s", getNome(), getSenha(), getEmail());
 	}
+<<<<<<< Updated upstream
+=======
+
+	public List<Solicitante> getSolicitante() {
+		return solicitantes;
+	}
+
+	public void setSolicitante(List<Solicitante> solicitantes) {
+		this.solicitantes = solicitantes;
+	}
+
+	public List<Residuo> getResiduos() {
+		return residuos;
+	}
+
+	public void setResiduos(List<Residuo> residuos) {
+		this.residuos = residuos;
+	}
+
+    public List<Coleta> getColetas() {
+		return coletas;
+	}
+
+	public void setColetas(List<Coleta> coletas) {
+		this.coletas = coletas;
+	}
+	
+>>>>>>> Stashed changes
 }

@@ -10,10 +10,11 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 import br.edu.infnet.appcoleta_jdk11.model.service.OleoService;
 
 
-@Order(1)
+@Order(4)
 @Component
 public class OleoLoader implements ApplicationRunner {
 	
@@ -40,6 +41,8 @@ public class OleoLoader implements ApplicationRunner {
 					Boolean.valueOf(campos[4]),
 					Oleo.valueOf(campos[5])
 				);
+			
+			oleo.setUsuario(new Usuario(Integer.valueOf(campos[6])));
 			
 			oleoService.incluir(oleo);
 			

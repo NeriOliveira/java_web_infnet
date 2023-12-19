@@ -9,24 +9,21 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
-import br.edu.infnet.appcoleta_jdk11.model.service.SolicitanteService;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
+import br.edu.infnet.appcoleta_jdk11.model.service.UsuarioService;
 
-<<<<<<< Updated upstream
-@Order(4)
-=======
-@Order(2)
->>>>>>> Stashed changes
+
+@Order(1)
 @Component
-public class SolicitanteLoader implements ApplicationRunner {
+public class UsuarioLoader implements ApplicationRunner {
 	
 	@Autowired
-	private SolicitanteService solicitanteService;
+	private UsuarioService usuarioService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		FileReader file = new FileReader("arquivos/solicitante.txt");
+		FileReader file = new FileReader("arquivos/usuario.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		String linha = leitura.readLine();
 		String[] campos = null;
@@ -34,13 +31,12 @@ public class SolicitanteLoader implements ApplicationRunner {
 		while(linha != null) {
 			campos = linha.split(";");
 		
-			Solicitante solicitante = new Solicitante(
-					campos[0], 
-					campos[1], 
-					campos[2]
-					);
+			Usuario usuario = new Usuario();
+			usuario.setEmail(campos[0]);
+			usuario.setNome(campos[1]);
+			usuario.setSenha(campos[2]);
 			
-			solicitanteService.incluir(solicitante);
+			usuarioService.incluir(usuario);
 			
 			linha = leitura.readLine();	
 		

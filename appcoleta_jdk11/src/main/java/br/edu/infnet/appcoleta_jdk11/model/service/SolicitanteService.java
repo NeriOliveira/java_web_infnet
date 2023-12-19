@@ -8,7 +8,12 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Solicitante;
+<<<<<<< Updated upstream
 //import br.edu.infnet.appcoleta_jdk11.model.repository.SolicitanteRepository;
+=======
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
+import br.edu.infnet.appcoleta_jdk11.model.repository.SolicitanteRepository;
+>>>>>>> Stashed changes
 
 @Service
 public class SolicitanteService {
@@ -22,6 +27,10 @@ public class SolicitanteService {
 	public Collection<Solicitante> obterLista(){
 		return mapaSolicitante.values();
 //		return (Collection<Solicitante>) solicitanteRepository.findAll();
+	}
+	
+	public Collection<Solicitante> obterLista(Usuario usuario){
+		return (Collection<Solicitante>) solicitanteRepository.obterLista(usuario.getId());
 	}
 	
 	public void incluir(Solicitante solicitante) {

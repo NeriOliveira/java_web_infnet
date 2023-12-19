@@ -9,6 +9,7 @@ import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer>{
 
+<<<<<<< Updated upstream
 	Usuario findEmail(String email);
 	
 	//incluir
@@ -23,3 +24,6 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer>{
 
 }
 */
+=======
+}
+>>>>>>> Stashed changes

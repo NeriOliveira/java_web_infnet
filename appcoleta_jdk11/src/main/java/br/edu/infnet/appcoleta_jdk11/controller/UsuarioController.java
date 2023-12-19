@@ -64,10 +64,10 @@ public class UsuarioController {
 	
 	@PostMapping(value = "/valida")
 	public String validar(Model model, @RequestParam String email, @RequestParam String senha) {		
-		userSession = usuarioService.validar(email,senha);
+		Usuario user = usuarioService.validar(email,senha);
 		
-		if(userSession != null) {
-			model.addAttribute("user", userSession);
+		if(user != null) {
+			model.addAttribute("user", user);
 			return "home";
 		}
 		

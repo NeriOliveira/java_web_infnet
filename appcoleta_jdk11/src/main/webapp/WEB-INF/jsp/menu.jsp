@@ -15,10 +15,10 @@
 			<a class="navbar-brand" href="/" style="background-color: #b7d7d8;"><b>&#127795;iGreen	APP&nbsp;</b></a>
 		</div>
 		<ul class="nav navbar-nav">
+		<li><a href="/usuario/lista" style= "color: #b7d7d8;"><b>Usuários</b></a></li>
 			<c:if test="${not empty user}">
-				<li><a href="/usuario/lista" style= "color: #b7d7d8;"><b>Usuários</b></a></li>
 				<li><a href="/solicitante/lista" style= "color: #b7d7d8;"><b>Solicitantes</b></a></li>
-				<li><a href="#" style= "color: #b7d7d8;"><b>Resíduos</b></a></li>
+				<li><a href="/residuo/lista" style= "color: #b7d7d8;"><b>Resíduos</b></a></li>
 				<li><a href="/oleo/lista" style= "color: #b7d7d8;"><b>Óleo</b></a></li>
 				<li><a href="/reciclavel/lista" style= "color: #b7d7d8;"><b>Reciclável</b></a></li>
 				<li><a href="/entulho/lista" style= "color: #b7d7d8;"><b>Entulho</b></a></li>

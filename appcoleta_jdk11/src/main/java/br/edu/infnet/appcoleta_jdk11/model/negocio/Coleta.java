@@ -4,13 +4,37 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "coleta")
 public class Coleta {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
 	private boolean pendente;
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name="coletasolicitanteid")
 	private Solicitante solicitante;
+	@ManyToMany(cascade = CascadeType.DETACH)
+	
 	private List<Residuo> residuos;
+	
+    @ManyToOne
+    @JoinColumn(name = "coletausuarioid")
+    private Usuario coletausuario;
+	
 	
 	public Coleta() {
 		descricao = "Pedido de Coleta";
@@ -71,6 +95,14 @@ public class Coleta {
 	
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public Usuario getUsuario() {
+		return coletausuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.coletausuario = usuario;
 	}
 	
 	@Override

@@ -1,14 +1,22 @@
-package br.edu.infnet.appcoleta_jdk11.model.service;
+ package br.edu.infnet.appcoleta_jdk11.model.service;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+<<<<<<< Updated upstream
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 //import br.edu.infnet.appcoleta_jdk11.model.repository.SolicitanteRepository;
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
+import br.edu.infnet.appcoleta_jdk11.model.repository.UsuarioRepository;
+>>>>>>> Stashed changes
 
 @Service
 public class UsuarioService {
@@ -17,6 +25,7 @@ public class UsuarioService {
 //	private UsuarioRepository usuarioRepository;
 	
 	private Map<String, Usuario> mapaUsuario = new HashMap<String, Usuario>();
+<<<<<<< Updated upstream
 	private Integer id = 0;
 	
 	public Collection<Usuario> obterLista(){
@@ -41,6 +50,20 @@ public class UsuarioService {
 //		usuarioRepository.deleteById(id);
 	
 		mapaUsuario.remove(email);
+=======
+	
+	public Collection<Usuario> obterLista(){
+		return (Collection<Usuario>) usuarioRepository.findAll();
+	}
+	
+	public void incluir(Usuario usuario) {
+		usuarioRepository.save(usuario);
+		mapaUsuario.put(usuario.getEmail(), usuario);
+	}
+	
+	public void excluir(Integer id) {
+		usuarioRepository.deleteById(id);
+>>>>>>> Stashed changes
 	}
 	
 	public Usuario validar(String email, String senha) {

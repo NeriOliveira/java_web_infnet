@@ -1,4 +1,4 @@
-Óleo de Caminhão;11;null;70;false;Automotivo
-Óleo de Cozinha;12;Fritura de batatas;15.25;true;Cozinha
-Óleo de Carro;13;null;21;false;Automotivo
-Óleo de Queimador;14;Queimador Industrial a Óleo;65.5;true;Termico
+Óleo de Caminhão;11;null;70;false;Automotivo;1
+Óleo de Cozinha;12;Fritura de batatas;15.25;true;Cozinha;3
+Óleo de Carro;13;null;21;false;Automotivo;2
+Óleo de Queimador;14;Queimador Industrial a Óleo;65.5;true;Termico;1

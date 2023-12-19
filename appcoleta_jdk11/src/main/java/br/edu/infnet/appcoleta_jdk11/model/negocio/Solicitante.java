@@ -31,6 +31,10 @@ public class Solicitante {
         this.setEmail(email);
     }
 
+    public Solicitante(Integer id) {
+        this.solicitanteid = id;
+    }
+    
 	public String getNome() {
 		return nome;
 	}

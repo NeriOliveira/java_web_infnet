@@ -19,7 +19,7 @@
 					<th>ID</th>
 					<th>Descrição</th>
 					<th>Data</th>
-					<th>Pendente?</th>
+					<th>Status</th>
 					<th>Solicitante</th>
 					<th>Resíduos</th>
 					<th></th>
@@ -31,7 +31,12 @@
 						<td>${c.id}</td>
 						<td>${c.descricao}</td>
 						<td>${c.data}</td>
-						<td>${c.pendente}</td>
+						<c:if test="${not c.pendente}">
+							<td><h2>&#128178;</h2></td>
+						</c:if>
+						<c:if test="${c.pendente}">
+							<td><h2>&#128667;</h2></td>
+						</c:if>
 						<td>${c.solicitante}</td>
 						<td>${c.residuos}</td>
 						<td><a href="/coleta/${c.id}/excluir">excluir</a></td>
@@ -39,6 +44,8 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<h5>&#128178;: Vendido</h5>
+		<h5>&#128667;: Coleta Agendada</h5>
 	</div>
 	<c:import url="/WEB-INF/jsp/footer.jsp" />
 

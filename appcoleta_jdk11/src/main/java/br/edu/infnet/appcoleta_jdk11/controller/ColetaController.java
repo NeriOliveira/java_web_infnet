@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Coleta;
+import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
 import br.edu.infnet.appcoleta_jdk11.model.service.ColetaService;
 
 @Controller
@@ -18,7 +20,7 @@ public class ColetaController {
 	
 
 	@GetMapping(value = "/coleta/lista")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 		
 		model.addAttribute("listaColeta", coletaService.obterLista());
 		

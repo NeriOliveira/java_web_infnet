@@ -1,6 +1,10 @@
 package br.edu.infnet.appcoleta_jdk11.model.negocio;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "entulho")
 public class Entulho extends Residuo{
 
 	public enum EntulhoClasse{
@@ -19,6 +23,10 @@ public class Entulho extends Residuo{
 	
 	public Entulho() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Entulho(Integer id) {
+		super(id);
 	}
 	
 	public Entulho(String nome, int codigo, String observacao, float volume, boolean isObra, EntulhoClasse classe) {

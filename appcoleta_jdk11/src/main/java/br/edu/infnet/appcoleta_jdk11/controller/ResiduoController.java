@@ -10,41 +10,41 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Oleo;
 import br.edu.infnet.appcoleta_jdk11.model.negocio.Usuario;
-import br.edu.infnet.appcoleta_jdk11.model.service.OleoService;
+import br.edu.infnet.appcoleta_jdk11.model.service.ResiduoService;
 
 @Controller
-public class OleoController {
+public class ResiduoController {
 	
 	@Autowired
-	private OleoService oleoService;
+	private ResiduoService residuoService;
 	
 
-	@GetMapping(value = "/oleo/lista")
+	@GetMapping(value = "/residuo/lista")
 	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 		
-		model.addAttribute("listaOleo", oleoService.obterLista(usuario));
+		model.addAttribute("listaResiduo", residuoService.obterLista(usuario));
 		
-		return "oleo/lista";
+		return "residuo/lista";
 	}
 	
-	@GetMapping(value = "/oleo/cadastro")
-	public String telaCadastro() {
-		return "oleo/cadastro";
-	}
+//	@GetMapping(value = "/residuo/cadastro")
+//	public String telaCadastro() {
+//		return "residuo/cadastro";
+//	}
 	
-	@GetMapping(value = "/oleo/{id}/excluir")
+	@GetMapping(value = "/residuo/{id}/excluir")
 	public String exclusao(@PathVariable Integer id) {
 		
-		oleoService.excluir(id);
+		residuoService.excluir(id);
 		
-		return "redirect:/oleo/lista";
+		return "redirect:/residuo/lista";
 	}
 	
-	@PostMapping(value = "/oleo/incluir")
-	public String incluir(Oleo oleo) {
+	@PostMapping(value = "/residuo/incluir")
+	public String incluir(Oleo residuo) {
 		
-		oleoService.incluir(oleo);
+		residuoService.incluir(residuo);
 		
-		return "redirect:/oleo/lista";
+		return "redirect:/residuo/lista";
 	}
 }
