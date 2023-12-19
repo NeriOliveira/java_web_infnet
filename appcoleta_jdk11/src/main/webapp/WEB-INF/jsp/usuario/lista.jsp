@@ -33,14 +33,10 @@
 						<td>${u.nome}</td>
 						<td>${u.email}</td>
 						<td><input type="password" value="${u.senha}"></td>
-<<<<<<< Updated upstream
-						<td><a href="/usuario/${s.id}/excluir">excluir</a></td>
-=======
 						<td>${u.solicitante.size()}</td>
 						<td>${u.residuos.size()}</td>
 						<td>${u.coletas.size()}</td>
 						<td><a href="/usuario/${u.id}/excluir">excluir</a></td>
->>>>>>> Stashed changes
 					</tr>
 				</c:forEach>
 			</tbody>

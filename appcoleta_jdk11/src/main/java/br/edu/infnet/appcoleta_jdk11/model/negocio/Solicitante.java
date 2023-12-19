@@ -1,27 +1,29 @@
 package br.edu.infnet.appcoleta_jdk11.model.negocio;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-//@Entity
-//@Table(name = "TSolicitante")
+@Entity
+@Table(name = "Solicitante")
 public class Solicitante {
 	
-	//@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer solicitanteid;
 	
-    private String nome;
-    private String cpf;
-    private String email;
-//    @ManyToOne
-//    @JoinColumn(name - "idUsuario")
+    private String solicitantenome;
+    private String solicitantecpf;
+    private String solicitanteemail;
+    @ManyToOne
+    @JoinColumn(name = "solicitanteusuarioid")
     private Usuario usuario;
 
-    public Solicitante() {
+	public Solicitante() {
 		// TODO Auto-generated constructor stub
 	}    
     
@@ -36,35 +38,43 @@ public class Solicitante {
     }
     
 	public String getNome() {
-		return nome;
+		return solicitantenome;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.solicitantenome = nome;
 	}
 
 	public String getCpf() {
-		return cpf;
+		return solicitantecpf;
 	}
 
 	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		this.solicitantecpf = cpf;
 	}
 
 	public String getEmail() {
-		return email;
+		return solicitanteemail;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.solicitanteemail = email;
 	}
 	
 	public Integer getId() {
-		return id;
+		return solicitanteid;
 	}
 	
 	public void setId(Integer id) {
-		this.id = id;
+		this.solicitanteid = id;
+	}
+	
+    public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	@Override

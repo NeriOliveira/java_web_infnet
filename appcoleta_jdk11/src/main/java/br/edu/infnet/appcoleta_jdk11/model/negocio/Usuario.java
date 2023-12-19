@@ -2,26 +2,17 @@ package br.edu.infnet.appcoleta_jdk11.model.negocio;
 
 import java.util.List;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-//@Entity
-//@Table(name = "TSolicitante")
+@Entity
+@Table(name = "Solicitante")
 public class Usuario {
-<<<<<<< Updated upstream
-	//@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-    private String nome;
-    private String email;
-    private String senha;
-//    @OneToMany
-//    @JoinColumn(name - "idUsuario")
-    private List<Solicitante> solicitante;
-=======
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer usuarioid;
@@ -41,12 +32,16 @@ public class Usuario {
 	@OneToMany
 	@JoinColumn(name = "coletausuarioid")
 	private List<Coleta> coletas;
->>>>>>> Stashed changes
 
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}    
     
+	public Usuario(Integer id) {
+		this.usuarioid = id;
+	}    
+    
+	
     public Usuario(String email, String nome, String senha) {
     	this.setEmail(email);
         this.setNome(nome);
@@ -54,43 +49,41 @@ public class Usuario {
     }
 
 	public String getNome() {
-		return nome;
+		return usuarionome;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.usuarionome = nome;
 	}
 
 	public String getSenha() {
-		return senha;
+		return usuariosenha;
 	}
 
 	public void setSenha(String cpf) {
-		this.senha = cpf;
+		this.usuariosenha = cpf;
 	}
 
 	public String getEmail() {
-		return email;
+		return usuarioemail;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.usuarioemail = email;
 	}
 	
 	public Integer getId() {
-		return id;
+		return usuarioid;
 	}
 	
 	public void setId(Integer id) {
-		this.id = id;
+		this.usuarioid = id;
 	}
 	
 	@Override
 	public String toString() {
 		return String.format("Nome: %s; CPF: %s; E-mail: %s", getNome(), getSenha(), getEmail());
 	}
-<<<<<<< Updated upstream
-=======
 
 	public List<Solicitante> getSolicitante() {
 		return solicitantes;
@@ -116,5 +109,4 @@ public class Usuario {
 		this.coletas = coletas;
 	}
 	
->>>>>>> Stashed changes
 }
