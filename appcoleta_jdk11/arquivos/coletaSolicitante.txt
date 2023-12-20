@@ -1,4 +1,4 @@
-C;Coleta de Recicláveeis - Guarulhos;2
+C;Coleta de Reciclaveis - Guarulhos/SP;2
 R;1
 R;2
 R;2
@@ -6,12 +6,12 @@ R;3
 R;2
 R;1
 R;4
-C;Coletas de Óleo - Santos;4
+C;Coleta de Oleos - Santos/SP;4
 O;5
 O;6
 O;7
 O;8
-C;Coletas de Entulho - Cubatão;3
+C;Coleta de Entulhos - Cubatao/SP;3
 E;9
 E;10
 E;11

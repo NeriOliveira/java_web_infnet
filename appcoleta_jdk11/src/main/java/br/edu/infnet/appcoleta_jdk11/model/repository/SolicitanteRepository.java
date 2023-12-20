@@ -12,15 +12,5 @@ public interface SolicitanteRepository extends CrudRepository<Solicitante, Integ
 	
 	@Query("from Solicitante s where s.solicitanteusuario.usuarioid = :userid")
 	public List<Solicitante> obterLista(Integer userid);
-	
-	//incluir
-	
-	//excluir
-	
-	//alterar
-	
-	//recuperar todos
-	
-	//recuperar um
 
 }

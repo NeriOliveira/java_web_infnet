@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Solicitante")
+@Table(name = "solicitante")
 public class Solicitante {
 	
 	@Id
@@ -21,7 +21,7 @@ public class Solicitante {
     private String solicitanteemail;
     @ManyToOne
     @JoinColumn(name = "solicitanteusuarioid")
-    private Usuario usuario;
+    private Usuario solicitanteusuario;
 
 	public Solicitante() {
 		// TODO Auto-generated constructor stub
@@ -70,11 +70,11 @@ public class Solicitante {
 	}
 	
     public Usuario getUsuario() {
-		return usuario;
+		return solicitanteusuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+		this.solicitanteusuario = usuario;
 	}
 	
 	@Override
