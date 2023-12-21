@@ -26,12 +26,12 @@
 					class="form-control" id="pwd" placeholder="Entre com a sua senha"
 					name="senha">
 			</div>
-			<div class="form-check mb-3">
+			<!--div class="form-check mb-3">
 				<label class="form-check-label"> <input
 					class="form-check-input" type="checkbox" name="lembrar">
 					Lembrar acesso
 				</label>
-			</div>
+			</div-->
 			<button type="submit" class="btn btn-success">Acessar</button>
 		</form>
 	</div>

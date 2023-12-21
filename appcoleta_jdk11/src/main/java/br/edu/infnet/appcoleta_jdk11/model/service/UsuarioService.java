@@ -22,8 +22,13 @@ public class UsuarioService {
 		return (Collection<Usuario>) usuarioRepository.findAll();
 	}
 	
+	public Collection<Usuario> obterLista(Usuario usuario){
+		return (Collection<Usuario>) usuarioRepository.obterLista(usuario.getId());
+	}
+	
 	public void incluir(Usuario usuario) {
 		usuarioRepository.save(usuario);
+		mapaUsuario.put(usuario.getEmail(), usuario);
 	}
 	
 	public void excluir(Integer id) {

@@ -10,10 +10,8 @@ import org.springframework.web.bind.support.SessionStatus;
 @Controller
 public class AppController {
 	
-//	@RequestMapping(method = RequestMethod.GET)
 	@GetMapping(value = "/")
 	public String telaHome() {
-//		return "/WEB-INF/jsp/home.jsp"; //Quando não está definido o diretório e a extensão no application.properties
 		return "home";
 	}
 	

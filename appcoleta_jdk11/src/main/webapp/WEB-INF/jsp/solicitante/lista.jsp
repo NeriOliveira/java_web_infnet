@@ -32,7 +32,7 @@
 						<td>${s.nome}</td>
 						<td>${s.cpf}</td>
 						<td>${s.email}</td>
-						<td>${s.usuarioid.nome}</td>
+						<td>${s.usuario.nome}</td>
 						<td><a href="/solicitante/${s.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>

@@ -29,7 +29,7 @@
 			<tbody>
 				<c:forEach var="u" items="${listaUsuario}">
 					<tr>
-						<td>${s.id}</td>
+						<td>${u.id}</td>
 						<td>${u.nome}</td>
 						<td>${u.email}</td>
 						<td><input type="password" value="${u.senha}"></td>
