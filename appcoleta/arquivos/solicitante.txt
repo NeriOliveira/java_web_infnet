@@ -1,4 +1,0 @@
-Patrick;40;patrick.noliveira@al.infnet.edu.br
-Maria;41;maria@al.infnet.edu.br
-Jose;42;jose@al.infnet.edu.br
-Otavio;43;otavio@al.infnet.edu.br

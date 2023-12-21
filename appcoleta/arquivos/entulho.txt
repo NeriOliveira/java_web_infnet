@@ -1,4 +1,0 @@
-Demolição de Parede;31;Residencial Pereira;30;true;A
-Demolição de Piso;32;Residencial Pereira;15.50;true;C
-Demolição de Hospital;33;Construtora Felizes;120;true;D
-Demolição de Parede;34;Praia Shopping;10;false;B
