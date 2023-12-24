@@ -1,6 +1,7 @@
 package br.edu.infnet.appcoleta_jdk11.model.negocio;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class Coleta {
 	
 	public Coleta() {
 		descricao = "Pedido de Coleta";
-		data = LocalDateTime.now();
+		data = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
 		pendente = true;
 	}
 	

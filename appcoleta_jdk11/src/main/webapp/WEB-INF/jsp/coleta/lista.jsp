@@ -30,7 +30,7 @@
 					<tr>
 						<td>${c.id}</td>
 						<td>${c.descricao}</td>
-						<td>${c.data}</td>
+						<td><input type="datetime-local" value="${c.data}"></td>
 						<c:if test="${not c.pendente}">
 							<td><h2>&#128178;</h2></td>
 						</c:if>
@@ -39,7 +39,12 @@
 						</c:if>
 						<td>${c.solicitante}</td>
 						<td>${c.residuos}</td>
-						<td><a href="/coleta/${c.id}/excluir">excluir</a></td>
+						<c:if test="${not c.pendente}">
+							<td></td>
+						</c:if>
+						<c:if test="${c.pendente}">
+							<td><a href="/coleta/${c.id}/excluir">excluir</a></td>
+						</c:if>
 					</tr>
 				</c:forEach>
 			</tbody>

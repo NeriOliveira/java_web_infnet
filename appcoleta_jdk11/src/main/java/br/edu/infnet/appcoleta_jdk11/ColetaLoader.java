@@ -3,6 +3,7 @@ package br.edu.infnet.appcoleta_jdk11;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,7 +52,7 @@ public class ColetaLoader implements ApplicationRunner {
 						new ArrayList<Residuo>()
 						);
 				
-				coletaService.incluir(coleta);
+				//coletaService.incluir(coleta);
 				break;
 				
 			case "O":
@@ -67,6 +68,7 @@ public class ColetaLoader implements ApplicationRunner {
 				break;
 			}
 			coleta.setUsuario(new Usuario(1));
+			coleta.setData(LocalDateTime.now().minusDays(7).truncatedTo(ChronoUnit.MINUTES));
 			coletaService.incluir(coleta);
 			linha = leitura.readLine();
 		}
