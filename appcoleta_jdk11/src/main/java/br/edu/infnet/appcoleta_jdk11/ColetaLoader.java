@@ -3,6 +3,7 @@ package br.edu.infnet.appcoleta_jdk11;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,7 +69,7 @@ public class ColetaLoader implements ApplicationRunner {
 				break;
 			}
 			coleta.setUsuario(new Usuario(1));
-			coleta.setData(LocalDateTime.now().minusDays(7).truncatedTo(ChronoUnit.MINUTES));
+			coleta.setData(LocalDateTime.now(ZoneId.of("America/Sao_Paulo")).minusDays(7).truncatedTo(ChronoUnit.MINUTES));
 			coletaService.incluir(coleta);
 			linha = leitura.readLine();
 		}

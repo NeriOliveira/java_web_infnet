@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ColetaServiceImpl implements ColetaService {
@@ -30,7 +30,7 @@ public class ColetaServiceImpl implements ColetaService {
     public Coleta updatePendente(Integer id) {
         Coleta coleta = getById(id);
         coleta.setPendente(true);
-        coleta.setData(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
+        coleta.setData(LocalDateTime.now(ZoneId.of("America/Sao_Paulo")).truncatedTo(ChronoUnit.MINUTES));
         repository.save(coleta);
         return coleta;
     }
@@ -39,7 +39,7 @@ public class ColetaServiceImpl implements ColetaService {
     public Coleta updateColetado(Integer id) {
         Coleta coleta = getById(id);
         coleta.setPendente(false);
-        coleta.setData(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
+        coleta.setData(LocalDateTime.now(ZoneId.of("America/Sao_Paulo")).truncatedTo(ChronoUnit.MINUTES));
         repository.save(coleta);
         return coleta;
 
